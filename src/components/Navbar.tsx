@@ -1,4 +1,4 @@
-import type { NavLink } from '../../types/data-types'
+import type { NavLink } from '../types/data-types'
 
 type NavbarProps = {
   links: NavLink[]

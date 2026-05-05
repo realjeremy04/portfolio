@@ -5,7 +5,7 @@ import type {
   ProjectItem,
   SkillGroup,
   Stat,
-} from '../../types/data-types'
+} from '../types/data-types'
 
 export const navLinks: NavLink[] = [
   { label: '<Name>', href: '#home' },

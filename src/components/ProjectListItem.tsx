@@ -1,4 +1,4 @@
-import type { ProjectItem } from '../../types/data-types'
+import type { ProjectItem } from '../types/data-types'
 
 type ProjectListItemProps = {
   project: ProjectItem

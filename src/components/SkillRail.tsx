@@ -1,4 +1,4 @@
-import type { SkillGroup } from '../../types/data-types'
+import type { SkillGroup } from '../types/data-types'
 
 type SkillRailProps = {
   group: SkillGroup

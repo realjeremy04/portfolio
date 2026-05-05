@@ -1,4 +1,4 @@
-import type { ExperienceItem as Experience } from '../../types/data-types'
+import type { ExperienceItem as Experience } from '../types/data-types'
 
 type ExperienceItemProps = {
   item: Experience
