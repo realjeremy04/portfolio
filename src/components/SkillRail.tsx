@@ -13,7 +13,7 @@ export function SkillRail({ group }: SkillRailProps) {
       <div className="flex flex-wrap gap-x-8 gap-y-4">
         {group.items.map((item, index) => (
           <span key={`${group.title}-${item}-${index}`} className={badgeStyles}>
-            <span className="grid h-7 w-7 place-items-center rounded-[2px] bg-[#ffdf2b] text-[12px] font-extrabold text-[#191919]">
+            <span className="grid h-7 w-7 place-items-center rounded-xs bg-[#ffdf2b] text-[12px] font-extrabold text-[#191919]">
               {item === 'TypeScript' ? 'TS' : item === 'JavaScript' ? 'JS' : item === 'React JS' ? '◌' : item === 'Next JS' ? 'N' : item === 'Prisma' ? '△' : item === 'Three.js' ? '⟁' : '•'}
             </span>
             {item}
