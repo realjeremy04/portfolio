@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import type { NavLink } from '../types/data-types'
 
 type NavbarProps = {
@@ -8,19 +10,19 @@ export function Navbar({ links }: NavbarProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-[#1f1f1f]/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1120px] items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
-        <a href="#home" className="flex items-center gap-3 text-[#d7d7d7] transition hover:text-white">
+        <Link to="/" className="flex items-center gap-3 text-[#d7d7d7] transition hover:text-white">
           <span className="h-4 w-4 rotate-45 border-2 border-[#00ff66]" />
-        </a>
+        </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="display-font text-[18px] font-bold text-[#cfcfcf] transition hover:text-white"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 

@@ -8,9 +8,9 @@ import type {
 } from '../types/data-types'
 
 export const navLinks: NavLink[] = [
-  { label: '<Name>', href: '#home' },
-  { label: 'Project', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: '<Name>', href: '/' },
+  { label: 'Home', href: '/' },
+  { label: 'Project', href: '/project' },
 ]
 
 export const stats: Stat[] = [
