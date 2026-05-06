@@ -1,7 +1,7 @@
+import heroImage from '../../assets/hero.png'
 import type { RefObject } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
-import { ProjectListItem } from '../ProjectListItem'
 import type { ProjectItem } from '../../types/data-types'
 
 type HomeProjectsSectionProps = {
@@ -14,59 +14,77 @@ function HomeProjectsSection({ projects, sectionRef }: HomeProjectsSectionProps)
     <section
       id="projects"
       ref={sectionRef}
-      className="snap-start border-b border-white/10 px-5 scroll-mt-24 sm:px-8 lg:px-10"
+      className="snap-start px-5 sm:px-8 lg:px-10"
     >
-      <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[1fr_0.96fr] lg:gap-16">
-        <ScrollReveal className="space-y-8" from="left" delay={40}>
-          <SectionHeading title="Projects" eyebrow="SELECTED WORK" />
-          <div className="space-y-4">
-            {projects.map((project, index) => (
-              <ScrollReveal key={project.number} from="left" delay={index * 120}>
-                <ProjectListItem project={project} />
-              </ScrollReveal>
-            ))}
+      <div className="mx-auto grid min-h-screen max-w-360 items-center justify-items-center gap-8 py-12 lg:grid-cols-2 lg:gap-12">
+        <ScrollReveal className="w-full max-w-xl space-y-8" from="left" delay={40}>
+          <SectionHeading title="My Projects" eyebrow="SELECTED WORK" />
+          <div className="max-w-xl space-y-5 text-[13px] leading-7 text-[#c2c2c2] sm:text-[14px]">
+            <p>Selected works that I&apos;ve built over the years, and currently working on.</p>
           </div>
 
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-xs bg-[#00ff66] px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#141414] transition duration-300 hover:-translate-y-0.5 hover:bg-[#10f870]"
+            className="inline-flex items-center justify-center rounded-full bg-[#00ff66] px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#141414] transition duration-300 hover:-translate-y-0.5 hover:bg-[#10f870]"
           >
             Learn More
           </a>
         </ScrollReveal>
 
-        <ScrollReveal from="right" delay={120}>
-          <div className="relative mx-auto w-full max-w-155">
-            <div className="absolute -inset-4 rounded-[42px] bg-[#00ff66]/5 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
-              <div className="grid min-h-140 gap-4 p-4 sm:grid-cols-[1.1fr_0.9fr]">
-                <div className="space-y-4 rounded-[30px] border border-white/10 bg-white/4 p-5">
-                  <div className="h-56 rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(0,255,102,0.08),rgba(255,255,255,0.02))] p-4">
-                    <div className="h-full rounded-[20px] border border-[#00ff66]/20 bg-[radial-gradient(circle_at_top,rgba(0,255,102,0.22),transparent_45%),linear-gradient(180deg,#171717,#0f0f0f)]" />
+        <ScrollReveal className="w-full max-w-155" from="right" delay={120}>
+          <div className="mx-auto w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
+            <div className="grid gap-4 p-4 sm:grid-cols-[1.08fr_0.92fr]">
+              <div className="space-y-4">
+                <figure className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#151515]">
+                  <img
+                    src={heroImage}
+                    alt={`${projects[0].title} preview`}
+                    className="h-[16rem] w-full object-cover grayscale contrast-110 brightness-80 sm:h-[19rem]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
+                  <figcaption className="absolute left-4 top-4 text-[10px] uppercase tracking-[0.3em] text-white/80">
+                    .01 {projects[0].title}
+                  </figcaption>
+                </figure>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-[22px] border border-white/10 bg-white/5 p-4">
+                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Case Study</p>
+                    <p className="mt-2 text-[13px] text-[#ededed]">High contrast, clean components, deliberate spacing.</p>
                   </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-[20px] border border-white/10 bg-white/5 p-4">
-                      <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Case Study</p>
-                      <p className="mt-2 text-[13px] text-[#ededed]">High contrast, clean components, deliberate spacing.</p>
-                    </div>
-                    <div className="rounded-[20px] border border-white/10 bg-white/5 p-4">
-                      <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Stack</p>
-                      <p className="mt-2 text-[13px] text-[#ededed]">React, Tailwind CSS, TypeScript, motion</p>
-                    </div>
+                  <div className="rounded-[22px] border border-white/10 bg-white/5 p-4">
+                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Stack</p>
+                    <p className="mt-2 text-[13px] text-[#ededed]">React, Tailwind CSS, TypeScript, motion</p>
                   </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <figure className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#151515]">
+                  <img
+                    src={heroImage}
+                    alt={`${projects[1].title} preview`}
+                    className="h-[16rem] w-full object-cover grayscale contrast-110 brightness-80 sm:h-[19rem]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                  <figcaption className="absolute left-4 bottom-4 text-[10px] uppercase tracking-[0.3em] text-white/80">
+                    {projects[1].title}
+                  </figcaption>
+                </figure>
+
+                <div className="rounded-[30px] border border-white/10 bg-white/5 p-4">
+                  <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Outcome</p>
+                  <p className="mt-2 text-[13px] leading-6 text-[#c2c2c2]">
+                    Fast-loading layouts with smooth section transitions and a consistent black/green visual identity.
+                  </p>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,#151515,#0c0c0c)] p-4">
-                    <div className="h-55 rounded-3xl border border-white/10 bg-[linear-gradient(135deg,rgba(0,255,102,0.12),rgba(255,255,255,0.02))]" />
-                  </div>
-                  <div className="rounded-[30px] border border-white/10 bg-white/5 p-4">
-                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Outcome</p>
-                    <p className="mt-2 text-[13px] leading-6 text-[#c2c2c2]">
-                      Fast-loading layouts with smooth section transitions and a consistent black/green visual identity.
-                    </p>
-                  </div>
-                </div>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#00ff66] px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#141414] transition duration-300 hover:-translate-y-0.5 hover:bg-[#10f870]"
+                >
+                  Learn More
+                </a>
               </div>
             </div>
           </div>

@@ -1,36 +1,48 @@
+import heroImage from '../../assets/hero.png'
 import type { RefObject } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
-import { contactLinks } from '../../data/homeContent'
 
 type HomeContactSectionProps = {
   sectionRef: RefObject<HTMLElement | null>
 }
 
 function HomeContactSection({ sectionRef }: HomeContactSectionProps) {
+  const socialLinks = [
+    { label: 'Email', href: 'mailto:hello@youremail.com', glyph: '✉' },
+    { label: 'GitHub', href: 'https://github.com', glyph: 'GH' },
+    { label: 'Instagram', href: 'https://instagram.com', glyph: 'IG' },
+    { label: 'LinkedIn', href: 'https://linkedin.com', glyph: 'in' },
+    { label: 'Discord', href: 'https://discord.com', glyph: 'DC' },
+  ] as const
+
   return (
     <section
       id="contact"
       ref={sectionRef}
-      className="snap-start px-5 scroll-mt-24 sm:px-8 lg:px-10"
+      className="snap-start px-5 sm:px-8 lg:px-10"
     >
-      <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-        <ScrollReveal className="space-y-8" from="left" delay={40}>
+      <div className="mx-auto grid min-h-screen max-w-360 items-center justify-items-center gap-10 py-20 lg:grid-cols-2 lg:gap-16">
+        <ScrollReveal className="w-full max-w-xl space-y-8" from="left" delay={40}>
           <SectionHeading title="Get In Touch" eyebrow="CONTACT" />
           <div className="max-w-xl space-y-5 text-[13px] leading-7 text-[#c2c2c2] sm:text-[14px]">
             <p>
-              Feel free to reach out for freelance projects, collaboration inquiries, or just a friendly hello. I’m always open to discussing new opportunities and connecting with like-minded individuals in the industry.
+              Feel free to reach out for freelance projects, collaboration inquiries, or just a friendly hello. I’m
+              always open to discussing new opportunities and connecting with like-minded individuals in the industry.
             </p>
           </div>
 
+          <p className="text-[14px] tracking-[0.02em] text-[#ededed]">jeremytk.busniess@gmail.com</p>
+
           <div className="flex flex-wrap gap-3">
-            {contactLinks.map((item) => (
+            {socialLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#ededed] transition duration-300 hover:-translate-y-0.5 hover:border-[#00ff66]/50 hover:text-[#00ff66]"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#334055] bg-[#334055] text-[11px] font-black uppercase tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#00ff66] hover:bg-[#00ff66] hover:text-[#101214]"
+                aria-label={item.label}
               >
-                {item.label}: {item.value}
+                {item.glyph}
               </a>
             ))}
           </div>
@@ -38,66 +50,30 @@ function HomeContactSection({ sectionRef }: HomeContactSectionProps) {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="mailto:hello@youremail.com"
-              className="inline-flex items-center justify-center rounded-xs bg-[#00ff66] px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#141414] transition duration-300 hover:-translate-y-0.5 hover:bg-[#10f870]"
+              className="inline-flex items-center justify-center rounded-full bg-[#00ff66] px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#141414] transition duration-300 hover:-translate-y-0.5 hover:bg-[#10f870]"
             >
               Email Me
             </a>
             <a
               href="#home"
-              className="inline-flex items-center justify-center rounded-xs border border-white/10 bg-white/5 px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#ededed] transition duration-300 hover:-translate-y-0.5 hover:border-[#00ff66]/60 hover:bg-white/10 hover:text-[#00ff66]"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#ededed] transition duration-300 hover:-translate-y-0.5 hover:border-[#00ff66]/60 hover:text-[#00ff66]"
             >
               Back To Top
             </a>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal from="right" delay={120}>
-          <div className="relative mx-auto w-full max-w-155">
-            <div className="absolute -inset-5 rounded-[42px] bg-[#00ff66]/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
-              <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-                <div className="space-y-4 rounded-[30px] border border-white/10 bg-white/5 p-5">
-                  <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Availability</p>
-                  <p className="display-font text-[clamp(2.8rem,7vw,5rem)] font-black uppercase leading-none text-[#00ff66]">
-                    Open
-                  </p>
-                  <p className="max-w-sm text-[13px] leading-7 text-[#c2c2c2]">
-                    Select freelance and collaboration projects only.
-                  </p>
-
-                  <div className="grid gap-3 pt-2 sm:grid-cols-2">
-                    <div className="rounded-[20px] border border-white/10 bg-[#111111] p-4">
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-[#8d8d8d]">Response</p>
-                      <p className="mt-2 text-[13px] text-[#ededed]">Within 24 hours</p>
-                    </div>
-                    <div className="rounded-[20px] border border-white/10 bg-[#111111] p-4">
-                      <p className="text-[10px] uppercase tracking-[0.22em] text-[#8d8d8d]">Timezone</p>
-                      <p className="mt-2 text-[13px] text-[#ededed]">GMT+7</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4 rounded-[30px] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(0,255,102,0.12),transparent_44%),linear-gradient(180deg,#151515,#0b0b0b)] p-5">
-                  <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-[#8d8d8d]">Focus</p>
-                    <p className="mt-2 text-[13px] leading-7 text-[#ededed]">
-                      Homepage builds, portfolio refreshes, and product pages with a premium black + green identity.
-                    </p>
-                  </div>
-
-                  <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-[#8d8d8d]">Promise</p>
-                    <p className="mt-2 text-[13px] leading-7 text-[#ededed]">
-                      Fast implementation, clean structure, and smooth motion that stays out of the way.
-                    </p>
-                  </div>
-
-                  <div className="rounded-3xl border border-[#00ff66]/20 bg-[#00ff66]/10 p-5">
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-[#9bd8a7]">Contact</p>
-                    <p className="mt-2 text-[13px] leading-7 text-[#ededed]">hello@youremail.com</p>
-                  </div>
-                </div>
-              </div>
+        <ScrollReveal className="w-full max-w-155" from="right" delay={120}>
+          <div className="mx-auto w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
+            <img
+              src={heroImage}
+              alt="Working desk setup"
+              className="h-[26rem] w-full object-cover object-center grayscale contrast-110 brightness-80 sm:h-[30rem] lg:h-[34rem]"
+            />
+            <div className="h-px w-full bg-white/10" />
+            <div className="flex items-center justify-between gap-4 px-5 py-4 text-[11px] uppercase tracking-[0.18em] text-[#8d8d8d]">
+              <span>Open for select work</span>
+              <span>GMT+7</span>
             </div>
           </div>
         </ScrollReveal>
