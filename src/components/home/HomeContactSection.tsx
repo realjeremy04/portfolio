@@ -6,9 +6,9 @@ function HomeContactSection() {
   return (
     <section
       id="contact"
-      className="snap-start px-5 pb-20 pt-20 sm:px-8 lg:px-10 lg:pb-24 lg:pt-24"
+      className="snap-start px-5 sm:px-8 lg:px-10"
     >
-      <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+      <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <ScrollReveal className="space-y-8" from="left" delay={40}>
           <SectionHeading title="Get In Touch" eyebrow="CONTACT" />
           <div className="max-w-xl space-y-5 text-[13px] leading-7 text-[#c2c2c2] sm:text-[14px]">

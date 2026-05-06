@@ -7,9 +7,9 @@ function HomeAboutSection() {
   return (
     <section
       id="about"
-      className="snap-start border-b border-white/10 px-5 pb-14 pt-20 sm:px-8 lg:px-10 lg:pb-16 lg:pt-24"
+      className="snap-start border-b border-white/10 px-5 sm:px-8 lg:px-10"
     >
-      <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+      <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <ScrollReveal className="space-y-8" from="left" delay={40}>
           <SectionHeading title="About Me" eyebrow="WHO I AM" />
           <div className="space-y-5 text-[13px] leading-7 text-[#c2c2c2] sm:text-[14px]">

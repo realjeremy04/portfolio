@@ -5,9 +5,9 @@ function HomeHeroSection() {
   return (
     <section
       id="home"
-      className="snap-start border-b border-white/10 px-5 pb-14 pt-28 sm:px-8 lg:px-10 lg:pb-16 lg:pt-28"
+      className="snap-start border-b border-white/10 px-5 sm:px-8 lg:px-10"
     >
-      <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
+      <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
         <ScrollReveal className="space-y-8" from="left" delay={40}>
           <div className="space-y-4">
             <p className="text-[11px] uppercase tracking-[0.38em] text-[#8d8d8d]">Hello, I&apos;m Jeremy</p>
