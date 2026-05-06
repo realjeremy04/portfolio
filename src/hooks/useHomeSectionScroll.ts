@@ -55,7 +55,7 @@ export function useHomeSectionScroll() {
 
       isAnimatingRef.current = true
       gsap.to(window, {
-        duration: 1.1,
+        duration: 0.9,
         ease: 'power3.out',
         scrollTo: {
           y: target,
@@ -90,9 +90,15 @@ export function useHomeSectionScroll() {
   )
 
   useEffect(() => {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(hover: none)').matches
+
+    if (isTouchDevice) {
+      return undefined
+    }
+
     const observer = Observer.create({
-      type: 'wheel,touch',
-      tolerance: 10,
+      type: 'wheel,pointer',
+      tolerance: 8,
       preventDefault: true,
       onUp: () => {
         if (isAnimatingRef.current) {
@@ -164,6 +170,7 @@ export function useHomeSectionScroll() {
   return {
     activeSection,
     handleKeyDownCapture,
+    setActiveSection,
     scrollToSection,
     sectionRefs,
   }

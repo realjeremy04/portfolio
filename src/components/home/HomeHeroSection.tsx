@@ -11,7 +11,7 @@ function HomeHeroSection({ sectionRef }: HomeHeroSectionProps) {
     <section
       id="home"
       ref={sectionRef}
-      className="snap-start border-b border-white/10 px-5 sm:px-8 lg:px-10"
+      className="snap-start border-b border-white/10 px-5 scroll-mt-24 sm:px-8 lg:px-10"
     >
       <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
         <ScrollReveal className="space-y-8" from="left" delay={40}>
