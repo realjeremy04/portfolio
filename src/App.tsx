@@ -1,18 +1,13 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 import { Navbar } from './components/Navbar'
-import { navLinks } from './data/portfolio'
 import Home from './pages/Home'
 import Project from './pages/Project'
 
 function App() {
-  const { pathname } = useLocation()
-  const isHomeRoute = pathname === '/'
-
   return (
     <div className="min-h-screen bg-[#1f1f1f] text-[#d4d4d4]">
-      {!isHomeRoute ? <Navbar links={navLinks} /> : null}
-
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project" element={<Project />} />

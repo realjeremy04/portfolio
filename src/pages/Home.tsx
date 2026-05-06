@@ -1,13 +1,25 @@
 import { HomeAboutSection } from '../components/home/HomeAboutSection'
 import { HomeContactSection } from '../components/home/HomeContactSection'
-import { HomeHeader } from '../components/home/HomeHeader'
 import { HomeHeroSection } from '../components/home/HomeHeroSection'
 import { HomeProjectsSection } from '../components/home/HomeProjectsSection'
 import { useHomeSectionScroll } from '../hooks/useHomeSectionScroll'
-import { projects} from '../data/portfolio'
+import { projects } from '../data/portfolio'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 function Home() {
-  const { activeSection, handleKeyDownCapture, scrollToSection, sectionRefs } = useHomeSectionScroll()
+  const { handleKeyDownCapture, scrollToSection, sectionRefs } = useHomeSectionScroll()
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) {
+      return
+    }
+
+    const target = hash.replace('#', '') as 'home' | 'about' | 'projects' | 'contact'
+
+    scrollToSection(target)
+  }, [hash, scrollToSection])
 
   return (
     <main
@@ -15,7 +27,6 @@ function Home() {
       onKeyDownCapture={handleKeyDownCapture}
       tabIndex={-1}
     >
-      <HomeHeader activeSection={activeSection} onNavigate={scrollToSection} />
       <HomeHeroSection sectionRef={sectionRefs.home} />
       <HomeAboutSection sectionRef={sectionRefs.about} />
       <HomeProjectsSection projects={projects} sectionRef={sectionRefs.projects} />

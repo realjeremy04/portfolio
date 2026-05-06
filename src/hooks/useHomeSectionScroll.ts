@@ -22,7 +22,7 @@ export function useHomeSectionScroll() {
       projects: projectsRef,
       contact: contactRef,
     }),
-    [aboutRef, contactRef, homeRef, projectsRef],
+    [],
   )
 
   const [activeSection, setActiveSection] = useState<HomeSectionId>('home')
@@ -38,7 +38,7 @@ export function useHomeSectionScroll() {
     releaseTimerRef.current = window.setTimeout(() => {
       isAnimatingRef.current = false
       releaseTimerRef.current = null
-    }, 150)
+    }, 250)
   }, [])
 
   const scrollToSection = useCallback(
@@ -55,7 +55,7 @@ export function useHomeSectionScroll() {
 
       isAnimatingRef.current = true
       gsap.to(window, {
-        duration: 2.5,
+        duration: 1.1,
         ease: 'power3.out',
         scrollTo: {
           y: target,
