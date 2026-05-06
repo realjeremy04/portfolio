@@ -9,20 +9,19 @@ type ScrollRevealProps = {
 }
 
 const motionStyles = {
-  up: 'translate-y-8',
-  left: 'translate-x-8',
-  right: '-translate-x-8',
-  scale: 'translate-y-4 scale-95',
+  up: 'translate-y-6',
+  left: 'translate-x-6',
+  right: '-translate-x-6',
+  scale: 'translate-y-3 scale-[0.98]',
 } as const
 
-const animationStyles = {
-  up: 'animate-fade-up',
-  left: 'animate-fade-left',
-  right: 'animate-fade-right',
-  scale: 'animate-fade-scale',
-} as const
-
-export function ScrollReveal({ children, className = '', delay = 0, threshold = 0.35, from = 'up' }: ScrollRevealProps) {
+export function ScrollReveal({
+  children,
+  className = '',
+  delay = 0,
+  threshold = 0.35,
+  from = 'up',
+}: ScrollRevealProps) {
   const elementRef = useRef<HTMLDivElement | null>(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -35,11 +34,13 @@ export function ScrollReveal({ children, className = '', delay = 0, threshold = 
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
       },
       {
         threshold,
-        rootMargin: '0px 0px -10% 0px',
+        rootMargin: '0px 0px -8% 0px',
       },
     )
 
@@ -51,8 +52,10 @@ export function ScrollReveal({ children, className = '', delay = 0, threshold = 
   return (
     <div
       ref={elementRef}
-      className={`${className} transform-gpu transition-all duration-700 ease-out motion-reduce:transform-none motion-reduce:transition-none ${isVisible ? `translate-y-0 translate-x-0 scale-100 opacity-100 ${animationStyles[from]}` : `opacity-0 ${motionStyles[from]}`}`}
-      style={{ animationDelay: `${delay}ms`, transitionDelay: `${delay}ms` }}
+      className={`${className} transform-gpu transition-[opacity,transform] duration-700 ease-out ${
+        isVisible ? 'translate-y-0 translate-x-0 scale-100 opacity-100' : `opacity-0 ${motionStyles[from]}`
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
