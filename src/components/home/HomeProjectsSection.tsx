@@ -1,3 +1,4 @@
+import type { RefObject } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
 import { ProjectListItem } from '../ProjectListItem'
@@ -5,12 +6,14 @@ import type { ProjectItem } from '../../types/data-types'
 
 type HomeProjectsSectionProps = {
   projects: ProjectItem[]
+  sectionRef: RefObject<HTMLElement | null>
 }
 
-function HomeProjectsSection({ projects }: HomeProjectsSectionProps) {
+function HomeProjectsSection({ projects, sectionRef }: HomeProjectsSectionProps) {
   return (
     <section
       id="projects"
+      ref={sectionRef}
       className="snap-start border-b border-white/10 px-5 sm:px-8 lg:px-10"
     >
       <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[1fr_0.96fr] lg:gap-16">

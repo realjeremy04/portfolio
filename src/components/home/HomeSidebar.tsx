@@ -1,4 +1,4 @@
-import { sectionLinks } from './homeContent'
+import { sectionLinks } from '../../data/homeContent'
 
 function HomeSidebar() {
   return (

@@ -3,16 +3,23 @@ import { HomeContactSection } from '../components/home/HomeContactSection'
 import { HomeHeader } from '../components/home/HomeHeader'
 import { HomeHeroSection } from '../components/home/HomeHeroSection'
 import { HomeProjectsSection } from '../components/home/HomeProjectsSection'
+import { useHomeSectionScroll } from '../hooks/useHomeSectionScroll'
 import { projects} from '../data/portfolio'
 
 function Home() {
+  const { activeSection, handleKeyDownCapture, scrollToSection, sectionRefs } = useHomeSectionScroll()
+
   return (
-    <main className="relative overflow-x-hidden scroll-smooth snap-y snap-mandatory">
-      <HomeHeader />
-      <HomeHeroSection />
-      <HomeAboutSection />
-      <HomeProjectsSection projects={projects} />
-      <HomeContactSection />
+    <main
+      className="relative overflow-x-hidden scroll-smooth snap-y snap-mandatory"
+      onKeyDownCapture={handleKeyDownCapture}
+      tabIndex={-1}
+    >
+      <HomeHeader activeSection={activeSection} onNavigate={scrollToSection} />
+      <HomeHeroSection sectionRef={sectionRefs.home} />
+      <HomeAboutSection sectionRef={sectionRefs.about} />
+      <HomeProjectsSection projects={projects} sectionRef={sectionRefs.projects} />
+      <HomeContactSection sectionRef={sectionRefs.contact} />
     </main>
   )
 }

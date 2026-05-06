@@ -1,11 +1,17 @@
+import type { RefObject } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
-import { contactLinks } from './homeContent'
+import { contactLinks } from '../../data/homeContent'
 
-function HomeContactSection() {
+type HomeContactSectionProps = {
+  sectionRef: RefObject<HTMLElement | null>
+}
+
+function HomeContactSection({ sectionRef }: HomeContactSectionProps) {
   return (
     <section
       id="contact"
+      ref={sectionRef}
       className="snap-start px-5 sm:px-8 lg:px-10"
     >
       <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">

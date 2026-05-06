@@ -1,10 +1,16 @@
 import heroImage from '../../assets/hero.png'
 import { ScrollReveal } from '../ScrollReveal'
+import type { RefObject } from 'react'
 
-function HomeHeroSection() {
+type HomeHeroSectionProps = {
+  sectionRef: RefObject<HTMLElement | null>
+}
+
+function HomeHeroSection({ sectionRef }: HomeHeroSectionProps) {
   return (
     <section
       id="home"
+      ref={sectionRef}
       className="snap-start border-b border-white/10 px-5 sm:px-8 lg:px-10"
     >
       <div className="mx-auto grid min-h-screen max-w-360 items-center gap-12 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
