@@ -1,15 +1,13 @@
-import heroImage from '../../assets/hero.png'
 import type { RefObject } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
-import type { ProjectItem } from '../../types/data-types'
+import { sectionPlaceholderImage } from '../../data/homeContent'
 
 type HomeProjectsSectionProps = {
-  projects: ProjectItem[]
   sectionRef: RefObject<HTMLElement | null>
 }
 
-function HomeProjectsSection({ projects, sectionRef }: HomeProjectsSectionProps) {
+function HomeProjectsSection({ sectionRef }: HomeProjectsSectionProps) {
   return (
     <section
       id="projects"
@@ -32,61 +30,12 @@ function HomeProjectsSection({ projects, sectionRef }: HomeProjectsSectionProps)
         </ScrollReveal>
 
         <ScrollReveal className="w-full max-w-[26rem] lg:max-w-[30rem] xl:max-w-[34rem]" from="right" delay={120}>
-          <div className="mx-auto w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
-            <div className="grid gap-3 p-3 sm:grid-cols-[1.08fr_0.92fr] xl:gap-4 xl:p-4">
-              <div className="space-y-3">
-                <figure className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#151515]">
-                  <img
-                    src={heroImage}
-                    alt={`${projects[0].title} preview`}
-                    className="h-[clamp(12rem,17vw,15rem)] w-full object-cover grayscale contrast-110 brightness-80"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
-                  <figcaption className="absolute left-4 top-4 text-[10px] uppercase tracking-[0.3em] text-white/80">
-                    .01 {projects[0].title}
-                  </figcaption>
-                </figure>
-
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-[22px] border border-white/10 bg-white/5 p-3">
-                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Case Study</p>
-                    <p className="mt-2 text-[12px] leading-5 text-[#ededed]">High contrast, clean components, deliberate spacing.</p>
-                  </div>
-                  <div className="rounded-[22px] border border-white/10 bg-white/5 p-3">
-                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Stack</p>
-                    <p className="mt-2 text-[12px] leading-5 text-[#ededed]">React, Tailwind CSS, TypeScript, motion</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <figure className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#151515]">
-                  <img
-                    src={heroImage}
-                    alt={`${projects[1].title} preview`}
-                    className="h-[clamp(12rem,17vw,15rem)] w-full object-cover grayscale contrast-110 brightness-80"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-                  <figcaption className="absolute left-4 bottom-4 text-[10px] uppercase tracking-[0.3em] text-white/80">
-                    {projects[1].title}
-                  </figcaption>
-                </figure>
-
-                <div className="rounded-[30px] border border-white/10 bg-white/5 p-3">
-                  <p className="text-[10px] uppercase tracking-[0.26em] text-[#8d8d8d]">Outcome</p>
-                  <p className="mt-2 text-[12px] leading-5 text-[#c2c2c2] sm:text-[13px] sm:leading-6">
-                    Fast-loading layouts with smooth section transitions and a consistent black/green visual identity.
-                  </p>
-                </div>
-
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-full bg-[#00ff66] px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#141414] transition duration-300 hover:-translate-y-0.5 hover:bg-[#10f870]"
-                >
-                  Learn More
-                </a>
-              </div>
-            </div>
+          <div className="mx-auto aspect-square w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
+            <img
+              src={sectionPlaceholderImage}
+              alt="Temporary placeholder visual"
+              className="h-full w-full object-contain p-10 sm:p-12"
+            />
           </div>
         </ScrollReveal>
       </div>

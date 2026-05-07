@@ -1,7 +1,7 @@
-import heroImage from '../../assets/hero.png'
 import type { RefObject } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
+import { sectionPlaceholderImage } from '../../data/homeContent'
 
 type HomeAboutSectionProps = {
   sectionRef: RefObject<HTMLElement | null>
@@ -36,17 +36,12 @@ function HomeAboutSection({ sectionRef }: HomeAboutSectionProps) {
         </ScrollReveal>
 
         <ScrollReveal className="w-full max-w-[26rem] lg:max-w-[30rem] xl:max-w-[34rem]" from="right" delay={120}>
-          <div className="mx-auto w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
+          <div className="mx-auto aspect-square w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
             <img
-              src={heroImage}
-              alt="Decorative portrait panel"
-              className="h-[clamp(18rem,25vw,26rem)] w-full object-cover grayscale contrast-110 brightness-75"
+              src={sectionPlaceholderImage}
+              alt="Temporary placeholder visual"
+              className="h-full w-full object-contain p-10 sm:p-12"
             />
-            <div className="h-px w-full bg-white/10" />
-            <div className="flex items-center justify-between gap-4 px-4 py-3 text-[10px] uppercase tracking-[0.18em] text-[#8d8d8d] sm:px-5 sm:py-4 sm:text-[11px]">
-              <span>Vietnam · GMT+7</span>
-              <span>Modern React interfaces</span>
-            </div>
           </div>
         </ScrollReveal>
       </div>

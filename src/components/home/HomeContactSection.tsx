@@ -1,8 +1,9 @@
-import heroImage from '../../assets/hero.png'
 import type { RefObject } from 'react'
-import { LuGithub, LuInstagram, LuLinkedin, LuMail, LuMessageCircle } from 'react-icons/lu'
+import { LuGithub, LuInstagram, LuLinkedin, LuMail} from 'react-icons/lu'
+import { AiOutlineDiscord } from "react-icons/ai";
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
+import { sectionPlaceholderImage } from '../../data/homeContent'
 
 type HomeContactSectionProps = {
   sectionRef: RefObject<HTMLElement | null>
@@ -10,11 +11,11 @@ type HomeContactSectionProps = {
 
 function HomeContactSection({ sectionRef }: HomeContactSectionProps) {
   const socialLinks = [
-    { label: 'Email', href: 'mailto:hello@youremail.com', icon: LuMail },
-    { label: 'GitHub', href: 'https://github.com', icon: LuGithub },
+    { label: 'Email', href: 'mailto:jeremytk.business@gmail.com', icon: LuMail },
+    { label: 'GitHub', href: 'https://github.com/realjeremy04', icon: LuGithub },
     { label: 'Instagram', href: 'https://instagram.com', icon: LuInstagram },
     { label: 'LinkedIn', href: 'https://linkedin.com', icon: LuLinkedin },
-    { label: 'Discord', href: 'https://discord.com', icon: LuMessageCircle },
+    { label: 'Discord', href: 'https://discord.com', icon: AiOutlineDiscord},
   ] as const
 
   return (
@@ -50,17 +51,12 @@ function HomeContactSection({ sectionRef }: HomeContactSectionProps) {
         </ScrollReveal>
 
         <ScrollReveal className="w-full max-w-[26rem] lg:max-w-[30rem] xl:max-w-[34rem]" from="right" delay={120}>
-          <div className="mx-auto w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
+          <div className="mx-auto aspect-square w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.38)]">
             <img
-              src={heroImage}
-              alt="Working desk setup"
-              className="h-[clamp(18rem,26vw,27rem)] w-full object-cover object-center grayscale contrast-110 brightness-80"
+              src={sectionPlaceholderImage}
+              alt="Temporary placeholder visual"
+              className="h-full w-full object-contain p-10 sm:p-12"
             />
-            <div className="h-px w-full bg-white/10" />
-            <div className="flex items-center justify-between gap-4 px-4 py-3 text-[10px] uppercase tracking-[0.18em] text-[#8d8d8d] sm:px-5 sm:py-4 sm:text-[11px]">
-              <span>Open for select work</span>
-              <span>GMT+7</span>
-            </div>
           </div>
         </ScrollReveal>
       </div>

@@ -1,6 +1,6 @@
-import heroImage from '../../assets/hero.png'
 import { ScrollReveal } from '../ScrollReveal'
 import type { RefObject } from 'react'
+import { sectionPlaceholderImage } from '../../data/homeContent'
 
 type HomeHeroSectionProps = {
   sectionRef: RefObject<HTMLElement | null>
@@ -45,12 +45,11 @@ function HomeHeroSection({ sectionRef }: HomeHeroSectionProps) {
         </ScrollReveal>
 
         <ScrollReveal className="order-1 w-full max-w-[26rem] lg:order-2 lg:max-w-[30rem] xl:max-w-[34rem]" from="right" delay={120}>
-          <div className="relative mx-auto w-full">
-            <div className="absolute inset-0 rounded-[48%] bg-[radial-gradient(circle_at_50%_20%,rgba(0,255,102,0.12),transparent_58%)] blur-2xl" />
+          <div className="mx-auto aspect-square w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
             <img
-              src={heroImage}
-              alt="Decorative portrait panel"
-              className="relative h-[clamp(20rem,28vw,28rem)] w-full rounded-[48%] object-cover grayscale contrast-110 brightness-75"
+              src={sectionPlaceholderImage}
+              alt="Temporary placeholder visual"
+              className="h-full w-full object-contain p-10 sm:p-12"
             />
           </div>
         </ScrollReveal>
