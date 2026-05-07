@@ -33,7 +33,7 @@ export function SectionHeading({
           compact
             ? 'max-w-[9ch] text-[clamp(2rem,8vw,3rem)] sm:text-[clamp(2.2rem,6.6vw,3.5rem)] lg:max-w-[11ch] lg:text-[clamp(2.75rem,3.8vw,5.2rem)]'
             : 'max-w-[11ch] text-[clamp(2.35rem,5.2vw,4.5rem)] sm:text-[clamp(2.5rem,4.8vw,5rem)] lg:text-[clamp(2.75rem,3.8vw,5.2rem)]'
-        } ${framedTitle ? 'inline-block bg-[#1f1f1f] px-2.5 py-1 sm:px-3 sm:py-1.5 lg:bg-transparent lg:px-0 lg:py-0' : ''}`}
+        } ${framedTitle ? 'inline-block bg-[var(--panel)] px-2.5 py-1 sm:px-3 sm:py-1.5 lg:bg-transparent lg:px-0 lg:py-0' : ''}`}
       >
         {title}
       </h2>
