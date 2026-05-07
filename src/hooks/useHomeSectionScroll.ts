@@ -6,10 +6,9 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(Observer, ScrollToPlugin)
 
 export type HomeSectionId = 'home' | 'about' | 'projects' | 'contact'
+const homeSectionOrder = ['home', 'about', 'projects', 'contact'] as const satisfies readonly HomeSectionId[]
 
 export function useHomeSectionScroll() {
-  const sectionOrder = ['home', 'about', 'projects', 'contact'] as const satisfies readonly HomeSectionId[]
-
   const homeRef = useRef<HTMLElement | null>(null)
   const aboutRef = useRef<HTMLElement | null>(null)
   const projectsRef = useRef<HTMLElement | null>(null)
@@ -26,8 +25,13 @@ export function useHomeSectionScroll() {
   )
 
   const [activeSection, setActiveSection] = useState<HomeSectionId>('home')
+  const activeSectionRef = useRef<HomeSectionId>('home')
   const isAnimatingRef = useRef(false)
   const releaseTimerRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    activeSectionRef.current = activeSection
+  }, [activeSection])
 
   const releaseLock = useCallback(() => {
     if (releaseTimerRef.current !== null) {
@@ -53,6 +57,10 @@ export function useHomeSectionScroll() {
         return
       }
 
+      if (activeSectionRef.current === sectionId) {
+        return
+      }
+
       isAnimatingRef.current = true
       gsap.to(window, {
         duration: 0.9,
@@ -65,7 +73,7 @@ export function useHomeSectionScroll() {
         onComplete: releaseLock,
       })
     },
-    [releaseLock, sectionRefs],
+    [releaseLock, sectionRefs, activeSectionRef],
   )
 
   const handleKeyDownCapture = useCallback(
@@ -74,19 +82,19 @@ export function useHomeSectionScroll() {
         return
       }
 
-      const currentIndex = sectionOrder.indexOf(activeSection)
+      const currentIndex = homeSectionOrder.indexOf(activeSection)
 
       if (event.key === 'ArrowDown' || event.key === 'PageDown' || event.key === ' ') {
         event.preventDefault()
-        scrollToSection(sectionOrder[Math.min(currentIndex + 1, sectionOrder.length - 1)])
+        scrollToSection(homeSectionOrder[Math.min(currentIndex + 1, homeSectionOrder.length - 1)])
       }
 
       if (event.key === 'ArrowUp' || event.key === 'PageUp') {
         event.preventDefault()
-        scrollToSection(sectionOrder[Math.max(currentIndex - 1, 0)])
+        scrollToSection(homeSectionOrder[Math.max(currentIndex - 1, 0)])
       }
     },
-    [activeSection, scrollToSection, sectionOrder],
+    [activeSection, scrollToSection],
   )
 
   useEffect(() => {
@@ -105,10 +113,10 @@ export function useHomeSectionScroll() {
           return
         }
 
-        const currentIndex = sectionOrder.indexOf(activeSection)
-        const previousSection = sectionOrder[Math.max(currentIndex - 1, 0)]
+        const currentIndex = homeSectionOrder.indexOf(activeSectionRef.current)
+        const previousSection = homeSectionOrder[Math.max(currentIndex - 1, 0)]
 
-        if (previousSection !== activeSection) {
+        if (previousSection !== activeSectionRef.current) {
           scrollToSection(previousSection)
         }
       },
@@ -117,10 +125,10 @@ export function useHomeSectionScroll() {
           return
         }
 
-        const currentIndex = sectionOrder.indexOf(activeSection)
-        const nextSection = sectionOrder[Math.min(currentIndex + 1, sectionOrder.length - 1)]
+        const currentIndex = homeSectionOrder.indexOf(activeSectionRef.current)
+        const nextSection = homeSectionOrder[Math.min(currentIndex + 1, homeSectionOrder.length - 1)]
 
-        if (nextSection !== activeSection) {
+        if (nextSection !== activeSectionRef.current) {
           scrollToSection(nextSection)
         }
       },
@@ -129,7 +137,7 @@ export function useHomeSectionScroll() {
     return () => {
       observer.kill()
     }
-  }, [activeSection, scrollToSection, sectionOrder])
+  }, [scrollToSection])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -141,7 +149,12 @@ export function useHomeSectionScroll() {
         const visibleEntry = visibleEntries[0]
 
         if (visibleEntry?.target.id) {
-          setActiveSection(visibleEntry.target.id as HomeSectionId)
+          const nextSection = visibleEntry.target.id as HomeSectionId
+
+          if (activeSectionRef.current !== nextSection) {
+            activeSectionRef.current = nextSection
+            setActiveSection(nextSection)
+          }
         }
       },
       {
@@ -150,7 +163,7 @@ export function useHomeSectionScroll() {
       },
     )
 
-    sectionOrder.forEach((sectionId) => {
+    homeSectionOrder.forEach((sectionId) => {
       const element = sectionRefs[sectionId].current
 
       if (element) {
@@ -165,7 +178,7 @@ export function useHomeSectionScroll() {
         window.clearTimeout(releaseTimerRef.current)
       }
     }
-  }, [sectionOrder, sectionRefs])
+  }, [sectionRefs])
 
   return {
     activeSection,

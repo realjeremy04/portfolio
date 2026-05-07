@@ -21,9 +21,9 @@ export function ScrollReveal({
   children,
   className = '',
   delay = 0,
-  threshold = 0.35,
+  threshold = 0.18,
   from = 'up',
-  stagger = 0.08,
+  stagger = 0.03,
 }: ScrollRevealProps) {
   const elementRef = useRef<HTMLDivElement | null>(null)
   const animationRef = useRef<gsap.core.Tween | null>(null)
@@ -46,6 +46,7 @@ export function ScrollReveal({
         y: offset.y,
         scale: offset.scale,
         force3D: true,
+        willChange: 'transform,opacity',
       })
     }
 
@@ -61,11 +62,14 @@ export function ScrollReveal({
             x: 0,
             y: 0,
             scale: 1,
-            duration: 0.72,
+            duration: 0.48,
             ease: 'power3.out',
             delay: delay / 1000,
             stagger,
-            overwrite: true,
+            overwrite: 'auto',
+            onComplete: () => {
+              gsap.set(revealTargets, { willChange: 'auto' })
+            },
           })
 
           return
@@ -75,7 +79,7 @@ export function ScrollReveal({
       },
       {
         threshold,
-        rootMargin: '0px 0px -8% 0px',
+        rootMargin: '0px 0px -12% 0px',
       },
     )
 
