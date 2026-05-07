@@ -8,6 +8,7 @@ type ScrollRevealProps = {
   threshold?: number
   from?: 'up' | 'left' | 'right' | 'scale'
   stagger?: number
+  once?: boolean
 }
 
 const motionOffsets = {
@@ -24,6 +25,7 @@ export function ScrollReveal({
   threshold = 0.18,
   from = 'up',
   stagger = 0.03,
+  once = true,
 }: ScrollRevealProps) {
   const elementRef = useRef<HTMLDivElement | null>(null)
   const animationRef = useRef<gsap.core.Tween | null>(null)
@@ -69,13 +71,18 @@ export function ScrollReveal({
             overwrite: 'auto',
             onComplete: () => {
               gsap.set(revealTargets, { willChange: 'auto' })
+              if (once) {
+                observer.disconnect()
+              }
             },
           })
 
           return
         }
 
-        setHiddenState()
+        if (!once) {
+          setHiddenState()
+        }
       },
       {
         threshold,

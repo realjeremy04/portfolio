@@ -28,6 +28,7 @@ export function useHomeSectionScroll() {
   const activeSectionRef = useRef<HomeSectionId>('home')
   const isAnimatingRef = useRef(false)
   const releaseTimerRef = useRef<number | null>(null)
+  const hasMountedRef = useRef(false)
 
   useEffect(() => {
     activeSectionRef.current = activeSection
@@ -45,19 +46,37 @@ export function useHomeSectionScroll() {
     }, 250)
   }, [])
 
+  const syncUrlToSection = useCallback((sectionId: HomeSectionId) => {
+    const { pathname, search } = window.location
+    const nextUrl = sectionId === 'home' ? `${pathname}${search}` : `${pathname}${search}#${sectionId}`
+
+    window.history.replaceState(null, '', nextUrl)
+  }, [])
+
   const scrollToSection = useCallback(
-    (sectionId: HomeSectionId) => {
+    (sectionId: HomeSectionId, immediate = false) => {
       const target = sectionRefs[sectionId].current
 
       if (!target) {
         return
       }
 
-      if (isAnimatingRef.current) {
+      if (!immediate && isAnimatingRef.current) {
         return
       }
 
-      if (activeSectionRef.current === sectionId) {
+      if (!immediate && activeSectionRef.current === sectionId) {
+        return
+      }
+
+      if (immediate) {
+        activeSectionRef.current = sectionId
+        setActiveSection(sectionId)
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY,
+          behavior: 'auto',
+        })
+        syncUrlToSection(sectionId)
         return
       }
 
@@ -73,7 +92,7 @@ export function useHomeSectionScroll() {
         onComplete: releaseLock,
       })
     },
-    [releaseLock, sectionRefs, activeSectionRef],
+    [releaseLock, sectionRefs, syncUrlToSection],
   )
 
   const handleKeyDownCapture = useCallback(
@@ -138,6 +157,23 @@ export function useHomeSectionScroll() {
       observer.kill()
     }
   }, [scrollToSection])
+
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true
+      const hashSection = window.location.hash.replace('#', '') as HomeSectionId
+
+      if (homeSectionOrder.includes(hashSection)) {
+        // Defer the immediate scroll to avoid calling setState synchronously inside an effect
+        // which can cause cascading renders. Scheduling on the next tick is sufficient.
+        window.setTimeout(() => scrollToSection(hashSection, true), 0)
+      }
+
+      return undefined
+    }
+
+    syncUrlToSection(activeSection)
+  }, [activeSection, scrollToSection, syncUrlToSection])
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -48,7 +48,7 @@ export function ExperienceTimeline() {
                       </div>
                     </div>
 
-                    <div className="rounded-[1.5rem] border border-white/6 bg-[#111111] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.22)] sm:p-7">
+                    <div className="rounded-[1.5rem] border border-white/6 bg-[#202521] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.22)] sm:p-7">
                       <div className="mb-2 text-[1.05rem] font-black tracking-[-0.03em] text-[#f2f2f2]">{t.company}</div>
                       <div className="mb-4 text-[0.95rem] font-semibold text-[#bfc3c6]">
                         {t.role} <span className="font-normal text-[#8d8d8d]">· Full-time</span>
