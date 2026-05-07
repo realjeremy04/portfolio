@@ -14,10 +14,10 @@ function HomeAboutSection({ sectionRef }: HomeAboutSectionProps) {
       ref={sectionRef}
       className="snap-start px-5 sm:px-8 lg:px-10"
     >
-      <div className="mx-auto grid min-h-screen max-w-360 items-center justify-items-center gap-10 py-20 lg:grid-cols-2 lg:gap-16">
-        <ScrollReveal className="w-full max-w-xl space-y-8" from="left" delay={40}>
+      <div className="mx-auto grid min-h-[100svh] max-w-360 items-center justify-items-center gap-7 py-0 lg:grid-cols-[minmax(0,0.98fr)_minmax(0,1.02fr)] lg:gap-10 lg:-translate-y-3 xl:-translate-y-4">
+        <ScrollReveal className="w-full max-w-[31rem] space-y-5 lg:self-center xl:space-y-6">
           <SectionHeading title="About Me" eyebrow="WHO I AM" />
-          <div className="max-w-xl space-y-5 text-[13px] leading-7 text-[#c2c2c2] sm:text-[14px]">
+          <div className="max-w-xl space-y-3 text-[12px] leading-6 text-[#c2c2c2] sm:text-[13px] sm:leading-6.5 lg:text-[14px] lg:leading-7">
             <p>
               I focus on clear interfaces, strong typography, and layouts that feel calm but intentional.
             </p>
@@ -35,15 +35,15 @@ function HomeAboutSection({ sectionRef }: HomeAboutSectionProps) {
           </a>
         </ScrollReveal>
 
-        <ScrollReveal className="w-full max-w-155" from="right" delay={120}>
+        <ScrollReveal className="w-full max-w-[26rem] lg:max-w-[30rem] xl:max-w-[34rem]" from="right" delay={120}>
           <div className="mx-auto w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
             <img
               src={heroImage}
               alt="Decorative portrait panel"
-              className="h-[24rem] w-full object-cover grayscale contrast-110 brightness-75 sm:h-[30rem]"
+              className="h-[clamp(18rem,25vw,26rem)] w-full object-cover grayscale contrast-110 brightness-75"
             />
             <div className="h-px w-full bg-white/10" />
-            <div className="flex items-center justify-between gap-4 px-5 py-4 text-[11px] uppercase tracking-[0.18em] text-[#8d8d8d]">
+            <div className="flex items-center justify-between gap-4 px-4 py-3 text-[10px] uppercase tracking-[0.18em] text-[#8d8d8d] sm:px-5 sm:py-4 sm:text-[11px]">
               <span>Vietnam · GMT+7</span>
               <span>Modern React interfaces</span>
             </div>

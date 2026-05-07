@@ -59,7 +59,7 @@ export function useHomeSectionScroll() {
         ease: 'power3.out',
         scrollTo: {
           y: target,
-          offsetY: 84,
+          offsetY: 0,
           autoKill: false,
         },
         onComplete: releaseLock,
