@@ -8,7 +8,7 @@ type MenuLink = {
 
 const menuLinks: MenuLink[] = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/#about' },
+  { label: 'About', href: '/about' },
   { label: 'Projects', href: '/project' },
   { label: 'Contact', href: '/#contact' },
 ]
