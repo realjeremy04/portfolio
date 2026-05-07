@@ -1,8 +1,10 @@
+import { LuFolderOpen, LuHouse, LuMail, LuUserRound } from 'react-icons/lu'
+
 export const sectionLinks = [
-  { label: 'Home', href: '#home', icon: '⌂' },
-  { label: 'About', href: '#about', icon: '◌' },
-  { label: 'Projects', href: '#projects', icon: '▣' },
-  { label: 'Contact', href: '#contact', icon: '✉' },
+  { label: 'Home', href: '#home', icon: LuHouse },
+  { label: 'About', href: '#about', icon: LuUserRound },
+  { label: 'Projects', href: '#projects', icon: LuFolderOpen },
+  { label: 'Contact', href: '#contact', icon: LuMail },
 ] as const
 
 export const aboutHighlights = [

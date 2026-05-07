@@ -15,6 +15,7 @@ function HomeSectionSidebar({ activeSection, onNavigate }: HomeSectionSidebarPro
       <ul className="pointer-events-auto flex flex-col gap-3 rounded-full border border-white/10 bg-[#111111]/90 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         {sectionLinks.map((item) => {
           const isActive = activeSection === item.label.toLowerCase()
+          const Icon = item.icon
 
           return (
             <li key={item.label}>
@@ -29,9 +30,7 @@ function HomeSectionSidebar({ activeSection, onNavigate }: HomeSectionSidebarPro
                 }`}
                 title={item.label}
               >
-                <span className="text-[18px] leading-none transition duration-300 group-hover:scale-110">
-                  {item.icon}
-                </span>
+                <Icon className="h-[18px] w-[18px] shrink-0 transition duration-300 group-hover:scale-110" aria-hidden="true" />
               </button>
             </li>
           )

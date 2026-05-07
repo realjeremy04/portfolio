@@ -1,5 +1,6 @@
 import heroImage from '../../assets/hero.png'
 import type { RefObject } from 'react'
+import { LuGithub, LuInstagram, LuLinkedin, LuMail, LuMessageCircle } from 'react-icons/lu'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
 
@@ -9,11 +10,11 @@ type HomeContactSectionProps = {
 
 function HomeContactSection({ sectionRef }: HomeContactSectionProps) {
   const socialLinks = [
-    { label: 'Email', href: 'mailto:hello@youremail.com', glyph: '✉' },
-    { label: 'GitHub', href: 'https://github.com', glyph: 'GH' },
-    { label: 'Instagram', href: 'https://instagram.com', glyph: 'IG' },
-    { label: 'LinkedIn', href: 'https://linkedin.com', glyph: 'in' },
-    { label: 'Discord', href: 'https://discord.com', glyph: 'DC' },
+    { label: 'Email', href: 'mailto:hello@youremail.com', icon: LuMail },
+    { label: 'GitHub', href: 'https://github.com', icon: LuGithub },
+    { label: 'Instagram', href: 'https://instagram.com', icon: LuInstagram },
+    { label: 'LinkedIn', href: 'https://linkedin.com', icon: LuLinkedin },
+    { label: 'Discord', href: 'https://discord.com', icon: LuMessageCircle },
   ] as const
 
   return (
@@ -39,27 +40,12 @@ function HomeContactSection({ sectionRef }: HomeContactSectionProps) {
               <a
                 key={item.label}
                 href={item.href}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#334055] bg-[#334055] text-[10px] font-black uppercase tracking-[0.08em] text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#00ff66] hover:bg-[#00ff66] hover:text-[#101214] sm:h-12 sm:w-12 sm:text-[11px]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#334055] bg-[#334055] text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#00ff66] hover:bg-[#00ff66] hover:text-[#101214] sm:h-12 sm:w-12"
                 aria-label={item.label}
               >
-                {item.glyph}
+                <item.icon className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
               </a>
             ))}
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="mailto:hello@youremail.com"
-              className="inline-flex items-center justify-center rounded-full bg-[#00ff66] px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#141414] transition duration-300 hover:-translate-y-0.5 hover:bg-[#10f870]"
-            >
-              Email Me
-            </a>
-            <a
-              href="#home"
-              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#ededed] transition duration-300 hover:-translate-y-0.5 hover:border-[#00ff66]/60 hover:text-[#00ff66]"
-            >
-              Back To Top
-            </a>
           </div>
         </ScrollReveal>
 
