@@ -24,21 +24,20 @@ export type ProjectShowcaseItem = {
 export const projectShowcase: ProjectShowcaseItem[] = [
   {
     number: '.01',
-    category: 'Frontend / Discovery',
-    title: 'Movie Explorer',
+    category: 'Management & Personal Commerce',
+    title: 'B-ShowSell',
     summary:
-      'A cinematic discovery experience that balances search, filtering, and watchlist flows with a fast, polished interface built for browsing at speed.',
-    stack: ['React', 'TypeScript', 'TMDB API', 'Tailwind CSS'],
+      'A website for Brand Collaboration Management & Personal Commerce System.',
+    stack: ['React', 'TypeScript', 'Redux', 'Tailwind CSS'],
     stars: '538',
     source: {
       label: 'Source',
-      href: 'https://github.com/realjeremy04',
+      href: 'https://github.com/SEP490-Project',
     },
     live: {
       label: 'Live',
-      href: 'https://realjeremy04.github.io/portfolio',
+      href: '#',
     },
-    accent: true,
     stats: [
       { label: 'Focus', value: 'Search UX' },
       { label: 'Motion', value: 'GSAP' },
@@ -47,19 +46,19 @@ export const projectShowcase: ProjectShowcaseItem[] = [
   },
   {
     number: '.02',
-    category: 'Commerce / Cart System',
-    title: 'Epik Cart',
+    category: 'Healthcare',
+    title: 'EduCare',
     summary:
-      'A streamlined shopping flow with responsive product surfaces, cart interactions, and a clean content hierarchy that keeps the browsing experience focused.',
-    stack: ['React', 'Tailwind CSS', 'TypeScript', 'API Design'],
+      'A healthcare platform developed for primary schools.',
+    stack: ['React', 'MUI', 'JavaScript'],
     stars: '214',
     source: {
       label: 'Source',
-      href: 'https://github.com/realjeremy04',
+      href: 'https://github.com/WDP301-SMMS',
     },
     live: {
       label: 'Live',
-      href: 'https://realjeremy04.github.io/portfolio',
+      href: '#',
     },
     stats: [
       { label: 'Scope', value: 'E-commerce' },

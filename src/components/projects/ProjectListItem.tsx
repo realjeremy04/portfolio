@@ -1,4 +1,4 @@
-import { LuArrowUpRight, LuGithub, LuGlobe } from 'react-icons/lu'
+import { LuArrowUpRight, LuGithub } from 'react-icons/lu'
 import type { ProjectShowcaseItem } from '../../data/projectShowcase'
 
 type ProjectListItemProps = {
@@ -38,7 +38,7 @@ function ProjectListItem({ project }: ProjectListItemProps) {
               <LuArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
 
-            <a
+            {/* <a
               href={project.live.href}
               target="_blank"
               rel="noreferrer"
@@ -47,7 +47,7 @@ function ProjectListItem({ project }: ProjectListItemProps) {
               <LuGlobe className="h-3.5 w-3.5" aria-hidden="true" />
               {project.live.label}
               <LuArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
+            </a> */}
           </div>
 
           <div className="flex flex-wrap justify-start gap-2 lg:justify-end">
