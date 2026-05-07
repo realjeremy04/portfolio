@@ -38,7 +38,7 @@ export function SectionHeading({
         {title}
       </h2>
       <div data-reveal-item={animateItems ? '' : undefined} className={`flex items-center ${compact ? 'gap-2.5' : 'gap-3'}`}>
-        <span className={`${compact ? 'w-[3.9rem] sm:w-[4.5rem]' : 'w-[4.5rem]'} h-1 rounded-full bg-[#00ff66]/35`} />
+        <span className={`${compact ? 'w-[3.9rem] sm:w-[4.5rem]' : 'w-[4.5rem]'} h-1 rounded-full glow-divider`} />
         <span className={`${compact ? 'w-7 sm:w-8' : 'w-8'} h-1 rounded-full bg-[#00ff66]/55`} />
       </div>
     </div>
