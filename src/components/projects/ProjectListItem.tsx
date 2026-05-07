@@ -1,4 +1,4 @@
-import { LuArrowUpRight, LuGithub, LuGlobe, LuStar } from 'react-icons/lu'
+import { LuArrowUpRight, LuGithub, LuGlobe } from 'react-icons/lu'
 import type { ProjectShowcaseItem } from '../../data/projectShowcase'
 
 type ProjectListItemProps = {
@@ -15,7 +15,7 @@ function ProjectListItem({ project }: ProjectListItemProps) {
           </p>
 
           <div className="space-y-2.5 sm:space-y-3">
-            <h3 className={`display-font text-[clamp(1.8rem,4vw,2.9rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] ${project.accent ? 'text-[#00ff66]' : 'text-[#dfe6d0]'}`}>
+            <h3 className={`display-font text-[clamp(1.8rem,4vw,2.9rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#dfe6d0]`}>
               {project.title}
             </h3>
 
@@ -48,11 +48,6 @@ function ProjectListItem({ project }: ProjectListItemProps) {
               {project.live.label}
               <LuArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
-
-            <span className="inline-flex items-center gap-1.5 text-[#e7ebde]">
-              <LuStar className="h-3.5 w-3.5 text-[#00ff66]" aria-hidden="true" />
-              {project.stars}
-            </span>
           </div>
 
           <div className="flex flex-wrap justify-start gap-2 lg:justify-end">

@@ -10,12 +10,12 @@ function App() {
   return (
     <div className="min-h-screen bg-[#1f1f1f] text-[#d4d4d4]">
       <Navbar />
-      <ParticleBackground />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project" element={<Project />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
+      <ParticleBackground />
     </div>
   )
 }

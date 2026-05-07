@@ -22,10 +22,9 @@ const cellStyles = [
 
 function CommitGraph() {
   return (
-    <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(17,17,17,0.96),rgba(10,10,10,0.98))] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.24)] sm:p-6 lg:p-7">
+    <div >
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p className="text-[9px] font-semibold uppercase tracking-[0.38em] text-[#8d8d8d] sm:text-[10px]">06 / Commit Graph</p>
           <p className="mt-2 max-w-2xl text-[12px] leading-6 text-[#bfc3c6] sm:text-[13px] sm:leading-6.5 lg:text-[14px] lg:leading-7">
             A contribution-style visualization with layered greens, soft bloom, and a centered composition that stays readable on every screen.
           </p>
