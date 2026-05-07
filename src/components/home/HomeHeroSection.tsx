@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
 import type { RefObject } from 'react'
-import { sectionPlaceholderImage } from '../../data/homeContent'
+import { heroSectionImage} from '../../data/homeContent'
 
 type HomeHeroSectionProps = {
   sectionRef: RefObject<HTMLElement | null>
@@ -45,9 +45,9 @@ const HomeHeroSection = memo(function HomeHeroSection({ sectionRef }: HomeHeroSe
         <ScrollReveal className="order-1 w-full max-w-[16rem] sm:max-w-[20rem] lg:order-2 lg:max-w-[30rem] xl:max-w-[34rem]" from="right" delay={16}>
           <div data-reveal-item className="mx-auto aspect-square w-full overflow-hidden rounded-[42px] border border-white/10 bg-[#0f0f0f] shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
             <img
-              src={sectionPlaceholderImage}
+              src={heroSectionImage}
               alt="Temporary placeholder visual"
-              className="h-full w-full object-contain p-10 sm:p-12"
+              className="h-full w-full object-cover"
             />
           </div>
         </ScrollReveal>

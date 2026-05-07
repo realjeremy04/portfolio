@@ -34,11 +34,11 @@ const HomeAboutSection = memo(function HomeAboutSection({ sectionRef }: HomeAbou
         </ScrollReveal>
 
         <ScrollReveal className="order-1 w-full max-w-[21.5rem] justify-self-center sm:max-w-[26rem] md:max-w-[31rem] lg:order-2 lg:max-w-[30rem] xl:max-w-[34rem]" from="right" delay={16}>
-          <div data-reveal-item className="mx-auto aspect-[3/2] w-full overflow-hidden rounded-[18px] border border-white/10 bg-[#0f0f0f] shadow-[0_18px_50px_rgba(0,0,0,0.18)] p-3 sm:aspect-[4/3] sm:rounded-[24px] sm:p-5 md:aspect-[1.24/1] md:rounded-[30px] md:p-6 lg:aspect-square lg:rounded-[42px] lg:p-10 lg:shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
+          <div data-reveal-item className="mx-auto aspect-[3/2] w-full overflow-hidden rounded-[18px] border border-white/10 bg-[#0f0f0f] shadow-[0_18px_50px_rgba(0,0,0,0.18)] sm:aspect-[4/3] sm:rounded-[24px] md:aspect-[1.24/1] md:rounded-[30px] lg:aspect-square lg:rounded-[42px] lg:shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
             <img
               src={sectionPlaceholderImage}
               alt="Temporary placeholder visual"
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover"
             />
           </div>
         </ScrollReveal>

@@ -1,7 +1,14 @@
 import { LuFolderOpen, LuHouse, LuMail, LuUserRound } from 'react-icons/lu'
 import viteLogo from '../assets/vite.svg'
+import heroImage from '../assets/heroImage.jpg'
+import contactImage from '../assets/contactImage.jpg'
+import projectsImage from '../assets/projectsImage.png'
 
 export const sectionPlaceholderImage = viteLogo
+export const heroSectionImage = heroImage
+// export const aboutImage = aboutImage
+export const projectsSectionImage = projectsImage
+export const contactSectionImage = contactImage
 
 export const sectionLinks = [
   { label: 'Home', href: '#home', icon: LuHouse },
