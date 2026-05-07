@@ -1,4 +1,5 @@
-import { type ReactNode, useEffect, useRef, useState } from 'react'
+import { type ReactNode, useEffect, useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 type ScrollRevealProps = {
   children: ReactNode
@@ -6,13 +7,14 @@ type ScrollRevealProps = {
   delay?: number
   threshold?: number
   from?: 'up' | 'left' | 'right' | 'scale'
+  stagger?: number
 }
 
-const motionStyles = {
-  up: 'translate-y-6',
-  left: 'translate-x-6',
-  right: '-translate-x-6',
-  scale: 'translate-y-3 scale-[0.98]',
+const motionOffsets = {
+  up: { x: 0, y: 22, scale: 0.96 },
+  left: { x: -14, y: 22, scale: 0.96 },
+  right: { x: 14, y: 22, scale: 0.96 },
+  scale: { x: 0, y: 16, scale: 0.94 },
 } as const
 
 export function ScrollReveal({
@@ -21,22 +23,55 @@ export function ScrollReveal({
   delay = 0,
   threshold = 0.35,
   from = 'up',
+  stagger = 0.08,
 }: ScrollRevealProps) {
   const elementRef = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const animationRef = useRef<gsap.core.Tween | null>(null)
+  const offset = motionOffsets[from]
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const element = elementRef.current
 
     if (!element) {
       return
     }
 
+    const targets = element.querySelectorAll<HTMLElement>('[data-reveal-item]')
+    const revealTargets = targets.length > 0 ? Array.from(targets) : [element]
+
+    const setHiddenState = () => {
+      gsap.set(revealTargets, {
+        autoAlpha: 0,
+        x: offset.x,
+        y: offset.y,
+        scale: offset.scale,
+        force3D: true,
+      })
+    }
+
+    setHiddenState()
+
     const observer = new IntersectionObserver(
       ([entry]) => {
+        animationRef.current?.kill()
+
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          animationRef.current = gsap.to(revealTargets, {
+            autoAlpha: 1,
+            x: 0,
+            y: 0,
+            scale: 1,
+            duration: 0.72,
+            ease: 'power3.out',
+            delay: delay / 1000,
+            stagger,
+            overwrite: true,
+          })
+
+          return
         }
+
+        setHiddenState()
       },
       {
         threshold,
@@ -46,17 +81,20 @@ export function ScrollReveal({
 
     observer.observe(element)
 
-    return () => observer.disconnect()
-  }, [threshold])
+    return () => {
+      observer.disconnect()
+      animationRef.current?.kill()
+    }
+  }, [delay, offset.scale, offset.x, offset.y, stagger, threshold])
+
+  useEffect(() => {
+    return () => {
+      animationRef.current?.kill()
+    }
+  }, [])
 
   return (
-    <div
-      ref={elementRef}
-      className={`${className} transform-gpu transition-[opacity,transform] duration-700 ease-out ${
-        isVisible ? 'translate-y-0 translate-x-0 scale-100 opacity-100' : `opacity-0 ${motionStyles[from]}`
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
+    <div ref={elementRef} className={className}>
       {children}
     </div>
   )
