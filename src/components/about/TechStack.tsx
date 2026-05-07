@@ -9,11 +9,8 @@ import {
   SiCss,
   SiTypescript,
   SiTailwindcss,
-  SiSupabase,
   SiReact,
-  SiFlutter,
-  SiLaravel,
-  SiGo,
+  SiJavascript,
 } from 'react-icons/si'
 
 const techItems = [
@@ -25,18 +22,15 @@ const techItems = [
   { id: 'css', name: 'CSS3', Icon: SiCss },
   { id: 'ts', name: 'TypeScript', Icon: SiTypescript },
   { id: 'tw', name: 'TailwindCSS', Icon: SiTailwindcss },
-  { id: 'supabase', name: 'Supabase', Icon: SiSupabase },
   { id: 'react', name: 'React.js', Icon: SiReact },
-  { id: 'flutter', name: 'Flutter', Icon: SiFlutter },
-  { id: 'laravel', name: 'Laravel', Icon: SiLaravel },
-  { id: 'go', name: 'Go', Icon: SiGo },
+  { id: 'javascript', name: 'JavaScript', Icon: SiJavascript },
 ]
 
 export function TechStack() {
   return (
     <section className="snap-start px-5 sm:px-8 lg:px-10">
-      <div className="mx-auto grid min-h-[100svh] max-w-1200 items-start justify-items-center gap-8 py-8 sm:gap-10 sm:py-12 lg:py-0 lg:-translate-y-3 xl:-translate-y-4">
-        <SectionHeading title="Technology Stack" eyebrow="TOOLS" animateItems compact />
+      <div className="mx-auto grid min-h-[70svh] max-w-1200 items-start justify-items-center gap-8 py-8 sm:gap-10 sm:py-12 lg:py-0 lg:-translate-y-3 xl:-translate-y-4">
+        <SectionHeading title="Tech Stack" eyebrow="TOOLS" animateItems compact />
 
         <ScrollReveal>
           <div className="mt-0 mx-auto w-full max-w-1200 rounded-2xl bg-[#0f0f0f] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.32)]">
