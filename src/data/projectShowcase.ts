@@ -66,48 +66,48 @@ export const projectShowcase: ProjectShowcaseItem[] = [
       { label: 'State', value: 'Responsive' },
     ],
   },
-  {
-    number: '.03',
-    category: 'Product / Dashboard',
-    title: 'Property Pro',
-    summary:
-      'A data-rich property workflow concept focused on clarity, structured metadata, and quick scanning for a more operational, dashboard-like feel.',
-    stack: ['React', 'Tailwind CSS', 'Charts', 'TypeScript'],
-    stars: '128',
-    source: {
-      label: 'Source',
-      href: 'https://github.com/realjeremy04',
-    },
-    live: {
-      label: 'Live',
-      href: 'https://realjeremy04.github.io/portfolio',
-    },
-    stats: [
-      { label: 'Focus', value: 'Data layout' },
-      { label: 'Stack', value: 'Front-end' },
-      { label: 'Mode', value: 'Analytical' },
-    ],
-  },
-  {
-    number: '.04',
-    category: 'AI / Resume Tooling',
-    title: 'Resume Roaster',
-    summary:
-      'An AI-assisted resume workflow that leans into concise feedback, structured output, and a lightweight interaction model for fast review cycles.',
-    stack: ['Next.js', 'Tailwind CSS', 'OpenAI', 'TypeScript'],
-    stars: '89',
-    source: {
-      label: 'Source',
-      href: 'https://github.com/realjeremy04',
-    },
-    live: {
-      label: 'Live',
-      href: 'https://realjeremy04.github.io/portfolio',
-    },
-    stats: [
-      { label: 'Role', value: 'AI tooling' },
-      { label: 'Output', value: 'Feedback loop' },
-      { label: 'Speed', value: 'Instant' },
-    ],
-  },
+  // {
+  //   number: '.03',
+  //   category: 'Product / Dashboard',
+  //   title: 'Property Pro',
+  //   summary:
+  //     'A data-rich property workflow concept focused on clarity, structured metadata, and quick scanning for a more operational, dashboard-like feel.',
+  //   stack: ['React', 'Tailwind CSS', 'Charts', 'TypeScript'],
+  //   stars: '128',
+  //   source: {
+  //     label: 'Source',
+  //     href: 'https://github.com/realjeremy04',
+  //   },
+  //   live: {
+  //     label: 'Live',
+  //     href: 'https://realjeremy04.github.io/portfolio',
+  //   },
+  //   stats: [
+  //     { label: 'Focus', value: 'Data layout' },
+  //     { label: 'Stack', value: 'Front-end' },
+  //     { label: 'Mode', value: 'Analytical' },
+  //   ],
+  // },
+  // {
+  //   number: '.04',
+  //   category: 'AI / Resume Tooling',
+  //   title: 'Resume Roaster',
+  //   summary:
+  //     'An AI-assisted resume workflow that leans into concise feedback, structured output, and a lightweight interaction model for fast review cycles.',
+  //   stack: ['Next.js', 'Tailwind CSS', 'OpenAI', 'TypeScript'],
+  //   stars: '89',
+  //   source: {
+  //     label: 'Source',
+  //     href: 'https://github.com/realjeremy04',
+  //   },
+  //   live: {
+  //     label: 'Live',
+  //     href: 'https://realjeremy04.github.io/portfolio',
+  //   },
+  //   stats: [
+  //     { label: 'Role', value: 'AI tooling' },
+  //     { label: 'Output', value: 'Feedback loop' },
+  //     { label: 'Speed', value: 'Instant' },
+  //   ],
+  // },
 ]
