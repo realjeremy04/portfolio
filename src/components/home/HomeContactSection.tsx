@@ -14,7 +14,7 @@ const HomeContactSection = memo(function HomeContactSection({ sectionRef }: Home
   const socialLinks = [
     { label: 'Email', href: 'mailto:jeremytk.business@gmail.com', icon: LuMail },
     { label: 'GitHub', href: 'https://github.com/realjeremy04', icon: LuGithub },
-    { label: 'LinkedIn', href: 'https://linkedin.com', icon: LuLinkedin },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kiệt-trương-tuấn-b6a357367', icon: LuLinkedin },
     { label: 'Discord', href: 'https://discord.com', icon: AiOutlineDiscord},
   ] as const
 
