@@ -34,7 +34,8 @@ const HomeHeroSection = memo(function HomeHeroSection({ sectionRef }: HomeHeroSe
           <div className="flex flex-wrap items-center justify-center gap-3 pt-0.5 lg:justify-start">
             <a
               data-reveal-item
-              href="#"
+              href="/Truong-Tuan-Kiet-CV.pdf"
+              download="Truong-Tuan-Kiet-CV.pdf"
               className="inline-flex min-h-12 min-w-[10.25rem] items-center justify-center rounded-full border border-[#00ff66]/80 bg-[#00ff66] px-5 py-3 text-[12px] font-black uppercase tracking-[0.08em] text-[#101214] shadow-[0_10px_24px_rgba(0,255,102,0.12)] transition-[transform,box-shadow,background-color,border-color] duration-300 ease-out hover:-translate-y-0.5 hover:border-[#3dff90] hover:bg-[#19ff79] hover:shadow-[0_16px_30px_rgba(0,255,102,0.2)] active:translate-y-0 active:scale-[0.98]"
             >
               Download CV
