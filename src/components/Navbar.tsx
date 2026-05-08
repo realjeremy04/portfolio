@@ -48,7 +48,8 @@ function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto flex max-w-360 items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
+      <div className="absolute inset-x-0 top-0 h-[4.75rem] border-b border-white/8 bg-[#1f1f1f]/28 backdrop-blur-2xl backdrop-saturate-150 sm:h-[5rem]" />
+      <div className="relative mx-auto flex max-w-360 items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
         <Link to="/" className="text-[18px] font-medium tracking-[-0.03em] text-[#ededed] transition hover:text-[#00ff66]">
           Jeremy
         </Link>
@@ -56,7 +57,7 @@ function Navbar() {
         <div ref={menuRef} className="relative z-[70] flex items-center justify-end">
           <button
             type="button"
-            className="relative z-[70] inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#ededed] transition duration-300 hover:border-[#00ff66]/50 hover:text-[#00ff66]"
+            className="relative z-[70] inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#ededed] backdrop-blur-md transition duration-300 hover:border-[#00ff66]/50 hover:text-[#00ff66]"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
             aria-controls="shared-navbar-menu"
