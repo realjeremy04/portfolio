@@ -6,8 +6,8 @@ import { ScrollReveal } from '../ScrollReveal'
 export function ExperienceTimeline() {
   return (
     <section className="snap-start bg-[var(--bg)] px-5 text-[#e6e6e6] sm:px-8 lg:px-10">
-      <div className="mx-auto grid min-h-[100svh] max-w-360 items-start justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:py-24">
-        <div className="w-full max-w-1200">
+      <div className="mx-auto grid min-h-[100svh] max-w-360 items-start justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:max-w-[61rem] lg:gap-9 lg:py-24 xl:max-w-[72rem] xl:gap-10 2xl:max-w-[86rem] 2xl:gap-12">
+        <div className="w-full max-w-[61rem] xl:max-w-[72rem] 2xl:max-w-[86rem]">
           <div className="flex items-center gap-4 sm:gap-6">
             <span className="h-px w-20 bg-[#00ff66]/35 sm:w-28" />
             <span className="h-px w-14 bg-[#00ff66]/55 sm:w-20" />
@@ -18,7 +18,7 @@ export function ExperienceTimeline() {
           </h3>
         </div>
 
-        <div className="relative mt-2 w-full max-w-1200">
+        <div className="relative mt-2 w-full max-w-[61rem] xl:max-w-[72rem] 2xl:max-w-[86rem]">
           {/* center vertical line */}
           <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/8" />
 
@@ -30,7 +30,7 @@ export function ExperienceTimeline() {
                     i % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'
                   }`}
                 >
-                  <div className="lg:w-[44%]">
+                  <div className="lg:w-[41%] xl:w-[43%] 2xl:w-[44%]">
                     <div className="mb-4 inline-flex overflow-hidden rounded-[1.4rem] border border-white/8 bg-[linear-gradient(180deg,#0f1217_0%,#171a21_100%)] text-white shadow-[0_12px_30px_rgba(0,0,0,0.18)]">
                       <div className="grid min-w-[13.5rem] grid-cols-3 divide-x divide-white/10 text-center sm:min-w-[15rem]">
                         <div className="px-5 py-3.5">
@@ -70,13 +70,13 @@ export function ExperienceTimeline() {
                     </div>
                   </div>
 
-                  <div className="flex justify-center lg:w-[12%] lg:items-start">
+                  <div className="flex justify-center lg:w-[18%] lg:items-start xl:w-[14%] 2xl:w-[12%]">
                     <div className="relative mt-4 flex h-6 w-6 items-center justify-center rounded-full border-2 border-[var(--bg)] bg-[#0d1117] shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
                       <div className="h-2.5 w-2.5 rounded-full bg-[#00ff66]" />
                     </div>
                   </div>
 
-                  <div className="lg:w-[44%]" />
+                  <div className="lg:w-[41%] xl:w-[43%] 2xl:w-[44%]" />
                 </div>
               </ScrollReveal>
             ))}

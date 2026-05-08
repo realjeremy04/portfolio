@@ -8,7 +8,7 @@ type ProjectListItemProps = {
 function ProjectListItem({ project }: ProjectListItemProps) {
   return (
     <article className="group border-t border-white/10 py-5 first:border-t-0 first:pt-0 sm:py-6 lg:py-7">
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-10">
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(11.5rem,12.75rem)] lg:items-start lg:gap-7 xl:grid-cols-[minmax(0,1fr)_minmax(13rem,15rem)] xl:gap-10">
         <div className="space-y-3.5 sm:space-y-4">
           <p className="font-mono text-[9px] uppercase tracking-[0.34em] text-[#98a18f] sm:text-[10px] lg:text-[11px]">
             - {project.category.toUpperCase()}
@@ -19,13 +19,13 @@ function ProjectListItem({ project }: ProjectListItemProps) {
               {project.title}
             </h3>
 
-            <p className="max-w-3xl text-[12px] leading-[1.55rem] text-[#b9c0af] sm:text-[13px] sm:leading-6 lg:max-w-[40rem] lg:text-[14px] lg:leading-7">
+            <p className="max-w-3xl text-[12px] leading-[1.55rem] text-[#b9c0af] sm:text-[13px] sm:leading-6 lg:max-w-[30rem] lg:text-[13.5px] lg:leading-6.5 xl:max-w-[40rem] xl:text-[14px] xl:leading-7">
               {project.summary}
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 lg:min-w-[15rem] lg:items-end lg:pt-1">
+        <div className="flex flex-col gap-4 lg:min-w-[11.5rem] lg:items-end lg:pt-1 xl:min-w-[15rem]">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] uppercase tracking-[0.16em] text-[#d7d7d7] sm:text-[11px]">
             <a
               href={project.source.href}
