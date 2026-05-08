@@ -3,10 +3,11 @@ import viteLogo from '../assets/vite.svg'
 import heroImage from '../assets/heroImage.jpg'
 import contactImage from '../assets/contactImage.jpg'
 import projectsImage from '../assets/projectsImage.png'
+import aboutImage from '../assets/aboutMe.jpg'
 
 export const sectionPlaceholderImage = viteLogo
 export const heroSectionImage = heroImage
-// export const aboutImage = aboutImage
+export const aboutSectionImage = aboutImage
 export const projectsSectionImage = projectsImage
 export const contactSectionImage = contactImage
 
