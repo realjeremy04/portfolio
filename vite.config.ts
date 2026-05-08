@@ -8,6 +8,5 @@ export default defineConfig({
     react(), 
     tailwindcss(),
   ],
-  // base: '/portfolio/', // Set the base path for GitHub Pages
-  base: '/', // Set the base path for development
+  base: '/portfolio/', // Set the base path for GitHub Pages
 })
