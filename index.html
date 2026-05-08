@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/portfolio/assets/web-icon-Bi3B5tC-.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect
+        if (redirect) {
+          sessionStorage.redirect = ''
+          history.replaceState(null, '', redirect)
+        }
+      })()
+    </script>
     <title>Jeremy</title>
     <script type="module" crossorigin src="/portfolio/assets/index-CDxzCe8i.js"></script>
     <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DI-U-h-a.css">
