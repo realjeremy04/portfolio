@@ -1,25 +1,4 @@
-export type ProjectAction = {
-  label: string
-  href: string
-}
-
-export type ProjectStat = {
-  label: string
-  value: string
-}
-
-export type ProjectShowcaseItem = {
-  number: string
-  category: string
-  title: string
-  summary: string
-  stack: string[]
-  stars: string
-  source: ProjectAction
-  live: ProjectAction
-  accent?: boolean
-  stats: ProjectStat[]
-}
+import type { ProjectShowcaseItem } from '../types/project.types'
 
 export const projectShowcase: ProjectShowcaseItem[] = [
   {

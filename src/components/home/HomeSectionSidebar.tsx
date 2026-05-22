@@ -1,10 +1,6 @@
-import type { HomeSectionId } from '../../hooks/useHomeSectionScroll'
+import type { HomeSectionId } from '../../types/navigation.types'
+import type { HomeSectionSidebarProps } from '../../types/home.types'
 import { sectionLinks } from '../../data/homeContent'
-
-type HomeSectionSidebarProps = {
-  activeSection: HomeSectionId
-  onNavigate: (sectionId: HomeSectionId) => void
-}
 
 function HomeSectionSidebar({ activeSection, onNavigate }: HomeSectionSidebarProps) {
   return (

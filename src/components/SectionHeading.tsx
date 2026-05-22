@@ -1,12 +1,4 @@
-type SectionHeadingProps = {
-  title: string
-  eyebrow?: string
-  animateItems?: boolean
-  compact?: boolean
-  className?: string
-  framedTitle?: boolean
-  hideEyebrowOnMobile?: boolean
-}
+import type { SectionHeadingProps } from '../types/section.types'
 
 export function SectionHeading({
   title,

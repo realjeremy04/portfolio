@@ -1,8 +1,3 @@
-export type NavLink = {
-  label: string
-  href: string
-}
-
 export type Stat = {
   value: string
   label: string

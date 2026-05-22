@@ -1,13 +1,13 @@
 
 import type {
   ExperienceItem,
-  NavLink,
   ProjectItem,
   SkillGroup,
   Stat,
-} from '../types/data-types'
+} from '../types/common.types'
+import type { NavigationLink } from '../types/navigation.types'
 
-export const navLinks: NavLink[] = [
+export const navLinks: NavigationLink[] = [
   { label: 'Jeremy', href: '/' },
   { label: 'Home', href: '/' },
   { label: 'Project', href: '/project' },

@@ -2,10 +2,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { Observer } from 'gsap/Observer'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import type { HomeSectionId } from '../types/navigation.types'
 
 gsap.registerPlugin(Observer, ScrollToPlugin)
-
-export type HomeSectionId = 'home' | 'about' | 'projects' | 'contact'
 const homeSectionOrder = ['home', 'about', 'projects', 'contact'] as const satisfies readonly HomeSectionId[]
 
 export function useHomeSectionScroll() {

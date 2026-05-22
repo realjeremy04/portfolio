@@ -1,9 +1,5 @@
 import { LuArrowUpRight, LuGithub } from 'react-icons/lu'
-import type { ProjectShowcaseItem } from '../../data/projectShowcase'
-
-type ProjectListItemProps = {
-  project: ProjectShowcaseItem
-}
+import type { ProjectListItemProps } from '../../types/project.types'
 
 function ProjectListItem({ project }: ProjectListItemProps) {
   return (

@@ -1,15 +1,7 @@
-import { type ReactNode, useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 
-type ScrollRevealProps = {
-  children: ReactNode
-  className?: string
-  delay?: number
-  threshold?: number
-  from?: 'up' | 'left' | 'right' | 'scale'
-  stagger?: number
-  once?: boolean
-}
+import type { ScrollRevealProps } from '../types/section.types'
 
 const motionOffsets = {
   up: { x: 0, y: 22, scale: 0.96 },
@@ -96,7 +88,7 @@ export function ScrollReveal({
       observer.disconnect()
       animationRef.current?.kill()
     }
-  }, [delay, offset.scale, offset.x, offset.y, stagger, threshold])
+  }, [delay, offset.scale, offset.x, offset.y, once, stagger, threshold])
 
   useEffect(() => {
     return () => {

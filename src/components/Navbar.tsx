@@ -1,12 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import type { NavigationLink } from '../types/navigation.types'
 
-type MenuLink = {
-  label: string
-  href: string
-}
-
-const menuLinks: MenuLink[] = [
+const menuLinks: NavigationLink[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Projects', href: '/project' },

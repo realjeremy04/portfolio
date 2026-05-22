@@ -1,11 +1,6 @@
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
-
-type Skill = {
-  id: string
-  title: string
-  desc: string
-}
+import type { Skill } from '../../types/about.types'
 
 const skills: Skill[] = [
   { id: 'web', title: 'Web Development', desc: 'Modern, responsive interfaces with accessibility in mind.' },

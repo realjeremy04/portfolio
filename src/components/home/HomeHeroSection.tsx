@@ -1,13 +1,9 @@
 import { memo } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
-import type { RefObject } from 'react'
 import { heroSectionImage} from '../../data/homeContent'
+import type { HomeSectionProps } from '../../types/home.types'
 
-type HomeHeroSectionProps = {
-  sectionRef: RefObject<HTMLElement | null>
-}
-
-const HomeHeroSection = memo(function HomeHeroSection({ sectionRef }: HomeHeroSectionProps) {
+const HomeHeroSection = memo(function HomeHeroSection({ sectionRef }: HomeSectionProps) {
   const cvHref = `${import.meta.env.BASE_URL}Truong-Tuan-Kiet-CV.pdf`
 
   return (

@@ -1,15 +1,11 @@
 import { memo } from 'react'
-import type { RefObject } from 'react'
 import { Link } from 'react-router-dom'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
 import { aboutSectionImage} from '../../data/homeContent'
+import type { HomeSectionProps } from '../../types/home.types'
 
-type HomeAboutSectionProps = {
-  sectionRef: RefObject<HTMLElement | null>
-}
-
-const HomeAboutSection = memo(function HomeAboutSection({ sectionRef }: HomeAboutSectionProps) {
+const HomeAboutSection = memo(function HomeAboutSection({ sectionRef }: HomeSectionProps) {
   return (
     <section
       id="about"

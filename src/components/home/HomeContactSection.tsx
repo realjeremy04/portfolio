@@ -1,21 +1,17 @@
 import { memo } from 'react'
-import type { RefObject } from 'react'
-import { LuGithub,LuLinkedin, LuMail} from 'react-icons/lu'
-import { AiOutlineDiscord } from "react-icons/ai";
+import { LuGithub, LuLinkedin, LuMail } from 'react-icons/lu'
+import { AiOutlineDiscord } from 'react-icons/ai'
 import { ScrollReveal } from '../ScrollReveal'
 import { SectionHeading } from '../SectionHeading'
 import { contactSectionImage } from '../../data/homeContent'
+import type { HomeSectionProps } from '../../types/home.types'
 
-type HomeContactSectionProps = {
-  sectionRef: RefObject<HTMLElement | null>
-}
-
-const HomeContactSection = memo(function HomeContactSection({ sectionRef }: HomeContactSectionProps) {
+const HomeContactSection = memo(function HomeContactSection({ sectionRef }: HomeSectionProps) {
   const socialLinks = [
     { label: 'Email', href: 'mailto:jeremytk.business@gmail.com', icon: LuMail },
     { label: 'GitHub', href: 'https://github.com/realjeremy04', icon: LuGithub },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kiệt-trương-tuấn-b6a357367', icon: LuLinkedin },
-    { label: 'Discord', href: 'https://discord.com', icon: AiOutlineDiscord},
+    { label: 'Discord', href: 'https://discord.com', icon: AiOutlineDiscord },
   ] as const
 
   return (
