@@ -6,7 +6,7 @@ function HomeSectionSidebar({ activeSection, onNavigate }: HomeSectionSidebarPro
   return (
     <nav
       aria-label="Homepage sections"
-      className="pointer-events-none fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 md:block lg:right-8"
+      className="pointer-events-none fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 md:block lg:left-8"
     >
       <ul className="pointer-events-auto flex flex-col gap-3 rounded-full border border-white/10 bg-[#111111]/90 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         {sectionLinks.map((item) => {
