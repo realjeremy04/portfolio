@@ -123,7 +123,7 @@ export function useHomeSectionScroll() {
     }
 
     const observer = Observer.create({
-      type: 'wheel,pointer',
+      type: 'wheel',
       tolerance: 8,
       preventDefault: true,
       onUp: () => {
