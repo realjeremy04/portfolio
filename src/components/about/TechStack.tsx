@@ -29,11 +29,11 @@ const techItems = [
 export function TechStack() {
   return (
     <section className="snap-start px-5 sm:px-8 lg:px-10">
-      <div className="mx-auto grid min-h-[70svh] max-w-[61rem] items-start justify-items-center gap-8 py-8 sm:gap-10 sm:py-12 lg:max-w-[61rem] lg:gap-9 lg:py-0 lg:-translate-y-3 xl:max-w-[72rem] xl:gap-10 xl:-translate-y-4 2xl:max-w-[86rem] 2xl:gap-12">
+      <div className="mx-auto grid min-h-[70svh] w-full max-w-[96rem] items-start justify-items-center gap-8 py-8 sm:gap-10 sm:py-12 lg:gap-9 lg:py-0 lg:-translate-y-3 xl:max-w-[112rem] xl:gap-10 xl:-translate-y-4 2xl:max-w-[112rem] 2xl:gap-12">
         <SectionHeading title="Tech Stack" eyebrow="TOOLS" animateItems compact />
 
         <ScrollReveal>
-          <div className="mt-0 mx-auto w-full max-w-[61rem] rounded-2xl bg-[#0f0f0f] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.32)] xl:max-w-[72rem] 2xl:max-w-[86rem]">
+          <div className="mt-0 mx-auto w-full max-w-[96rem] rounded-2xl bg-[#0f0f0f] p-6 shadow-[0_30px_90px_rgba(0,0,0,0.32)] xl:max-w-[112rem] 2xl:max-w-[112rem]">
             <div className="grid grid-cols-3 items-center gap-6 sm:grid-cols-6 lg:grid-cols-6 lg:gap-5 xl:grid-cols-7 xl:gap-6">
               {techItems.map(({ id, name, Icon }) => (
                 <div key={id} className="flex flex-col items-center gap-2 text-center">

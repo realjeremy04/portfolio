@@ -6,8 +6,8 @@ import { ScrollReveal } from '../ScrollReveal'
 export function ExperienceTimeline() {
   return (
     <section className="snap-start bg-[var(--bg)] px-5 text-[#e6e6e6] sm:px-8 lg:px-10">
-      <div className="mx-auto grid min-h-[100svh] max-w-360 items-start justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:max-w-[61rem] lg:gap-9 lg:py-24 xl:max-w-[72rem] xl:gap-10 2xl:max-w-[86rem] 2xl:gap-12">
-        <div className="w-full max-w-[61rem] xl:max-w-[72rem] 2xl:max-w-[86rem]">
+      <div className="mx-auto grid min-h-[100svh] w-full max-w-[96rem] items-start justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:gap-9 lg:py-24 xl:max-w-[112rem] xl:gap-10 2xl:max-w-[112rem] 2xl:gap-12">
+        <div className="w-full max-w-screen xl:max-w-[112rem] 2xl:max-w-[112rem]">
           <div className="flex items-center gap-4 sm:gap-6">
             <span className="h-px w-20 bg-[#00ff66]/35 sm:w-28" />
             <span className="h-px w-14 bg-[#00ff66]/55 sm:w-20" />
@@ -18,7 +18,7 @@ export function ExperienceTimeline() {
           </h3>
         </div>
 
-        <div className="relative mt-2 w-full max-w-[61rem] xl:max-w-[72rem] 2xl:max-w-[86rem]">
+        <div className="relative mt-2 w-full max-w-[96rem] xl:max-w-[112rem] 2xl:max-w-[112rem]">
           {/* center vertical line */}
           <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/8" />
 

@@ -12,7 +12,7 @@ const skills: Skill[] = [
 export function SkillsSection() {
   return (
     <section className="snap-start px-5 sm:px-8 lg:px-10">
-      <div className="mx-auto grid min-h-[100svh] max-w-360 items-start justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:py-0 lg:-translate-y-3 xl:-translate-y-4">
+      <div className="mx-auto grid min-h-[100svh] w-full max-w-[96rem] items-start justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:py-0 lg:-translate-y-3 xl:max-w-[112rem] xl:-translate-y-4">
         <SectionHeading title="Skills & Expertise" eyebrow="CAPABILITIES" animateItems />
         <p className="mt-3 text-[#bfc3c6] max-w-[70ch]">Areas I focus on, blending product thinking with engineering craft.</p>
 

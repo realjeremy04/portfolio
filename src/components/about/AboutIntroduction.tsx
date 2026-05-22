@@ -5,7 +5,7 @@ import { projectsSectionImage, contactSectionImage } from '../../data/homeConten
 export function AboutIntroduction() {
   return (
     <section className="snap-start px-5 sm:px-8 lg:px-10">
-      <div className="mx-auto grid min-h-[100svh] max-w-360 items-center justify-items-center gap-4 py-8 sm:gap-[1.125rem] sm:py-10 md:gap-5 md:py-12 lg:grid-cols-[minmax(0,0.98fr)_minmax(0,1.02fr)] lg:items-center lg:justify-items-center lg:gap-10 lg:py-0 lg:-translate-y-3 xl:-translate-y-4">
+      <div className="grid min-h-[100svh] w-full items-center justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(18.5rem,21.5rem)] lg:gap-10 lg:py-0 xl:max-w-screen xl:grid-cols-[minmax(0,1fr)_minmax(21rem,25rem)] xl:gap-12 xl:-translate-y-3 2xl:max-w-screen 2xl:grid-cols-[minmax(0,0.96fr)_minmax(0,1.04fr)] 2xl:gap-14 2xl:-translate-y-4">
           <ScrollReveal from="left">
             <div className="order-2 lg:order-1 lg:self-start">
               <SectionHeading title="Overview" eyebrow="BIO" animateItems compact />
@@ -22,7 +22,7 @@ export function AboutIntroduction() {
           </ScrollReveal>
 
           <ScrollReveal from="right">
-            <div className="order-1 lg:order-2 relative mx-auto w-full max-w-[20rem] sm:max-w-[24rem] lg:max-w-[30rem]">
+            <div className="order-1 relative mx-auto w-full max-w-[20rem] sm:max-w-[24rem] lg:order-2 lg:max-w-[34rem] xl:max-w-[40rem]">
               <div className="relative">
                 <div className="absolute -left-8 -top-8 w-48 h-32 overflow-hidden rounded-2xl bg-[#0f0f0f] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
                   <img src={projectsSectionImage} alt="proj" className="w-full h-full object-cover" />
