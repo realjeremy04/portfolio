@@ -4,10 +4,10 @@ import { CommitGraph } from './CommitGraph'
 
 function CommitGraphSection() {
   return (
-    <section className="relative px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-      <div className="mx-auto w-full max-w-[96rem] lg:max-w-[112rem] xl:max-w-[112rem] 2xl:max-w-[112rem]">
+    <section className="grid justify-items-center px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+      <div className="grid w-full max-w-[92rem] gap-6">
         <ScrollReveal>
-          <SectionHeading title="Commit Graph" animateItems compact />
+          <SectionHeading title="Commit Graph" animateItems compact framedTitle />
         </ScrollReveal>
 
         <ScrollReveal from="up" delay={14}>

@@ -5,10 +5,10 @@ import { projectShowcase } from '../../data/projectShowcase'
 
 function FeaturedProjectsSection() {
   return (
-    <section id="featured-projects" className="relative snap-start px-5 pt-6 sm:px-8 sm:pt-8 lg:px-10">
-      <div className="mx-auto w-full max-w-[96rem] gap-6 py-8 sm:gap-8 sm:py-10 md:gap-10 md:py-12 lg:max-w-[112rem] xl:max-w-[112rem] 2xl:max-w-[112rem]">
+    <section id="featured-projects" className="grid snap-start justify-items-center px-5 pt-6 sm:px-8 sm:pt-8 lg:px-10">
+      <div className="grid w-full max-w-[92rem] gap-6 py-8 sm:gap-8 sm:py-10 md:gap-10 md:py-12">
         <ScrollReveal>
-          <SectionHeading title="Projects" animateItems compact />
+          <SectionHeading title="Projects" animateItems compact framedTitle />
         </ScrollReveal>
 
         <div className="mt-6 sm:mt-8">
