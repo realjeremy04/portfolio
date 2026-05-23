@@ -46,9 +46,9 @@ function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="absolute inset-x-0 top-0 h-[4.75rem] border-b border-white/8 bg-[#1f1f1f]/28 backdrop-blur-2xl backdrop-saturate-150 sm:h-[5rem]" />
       <div className="relative mx-auto flex max-w-360 items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
-        <Link to="/" className="text-[18px] font-medium tracking-[-0.03em] text-[#ededed] transition hover:text-[#00ff66]">
+        <p className="text-[18px] font-medium tracking-[-0.03em] text-[#ededed]">
           Jeremy
-        </Link>
+        </p>
 
         <div ref={menuRef} className="relative z-[70] flex items-center justify-end">
           <button
