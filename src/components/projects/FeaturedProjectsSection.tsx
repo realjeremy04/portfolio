@@ -6,9 +6,9 @@ import { projectShowcase } from '../../data/projectShowcase'
 function FeaturedProjectsSection() {
   return (
     <section id="featured-projects" className="grid snap-start justify-items-center px-5 pt-6 sm:px-8 sm:pt-8 lg:px-10">
-      <div className="grid w-full max-w-[92rem] gap-6 py-8 sm:gap-8 sm:py-10 md:gap-10 md:py-12">
+      <div className="grid w-full max-w-368 gap-6 py-8 sm:gap-8 sm:py-10 md:gap-10 md:py-12">
         <ScrollReveal>
-          <SectionHeading title="Projects" animateItems compact framedTitle />
+          <SectionHeading title="Highlights" animateItems eyebrow="FEATURED WORK" compact framedTitle />
         </ScrollReveal>
 
         <div className="mt-6 sm:mt-8">

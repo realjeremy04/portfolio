@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Project from './pages/Project'
 import ParticleBackground from './components/ParticleBackground'
 import AboutPage from './pages/About'
+import LoadingScreen from './components/loading-screen/LoadingScreen'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -20,6 +21,7 @@ function ScrollToTop() {
 function App() {
   return (
     <div className="min-h-screen bg-[#1f1f1f] text-[#d4d4d4]">
+      <LoadingScreen />
       <ScrollToTop />
       <Navbar />
       <Routes>
