@@ -7,7 +7,7 @@ export const projectShowcase: ProjectShowcaseItem[] = [
     title: 'B-ShowSell',
     summary:
       'A website for Brand Collaboration Management & Personal Commerce System.',
-    stack: ['React', 'TypeScript', 'Redux', 'Tailwind CSS'],
+    stack: ['React', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS', 'Recharts', 'Facebook API', 'TikTok API'],
     stars: '538',
     source: {
       label: 'Source',

@@ -46,11 +46,11 @@ function ProjectListItem({ project }: ProjectListItemProps) {
             </a> */}
           </div>
 
-          <div className="flex flex-wrap justify-start gap-2 lg:justify-end">
-            {project.stack.slice(0, 3).map((item) => (
+          <div className="flex flex-wrap justify-start gap-2 sm:flex-nowrap lg:justify-end">
+            {project.stack.map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#d3dac8] transition duration-300 group-hover:border-[#00ff66]/25 group-hover:bg-[#00ff66]/6 group-hover:text-[#f2f2f2]"
+                className="whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#d3dac8] transition duration-300 group-hover:border-[#00ff66]/25 group-hover:bg-[#00ff66]/6 group-hover:text-[#f2f2f2]"
               >
                 {item}
               </span>
