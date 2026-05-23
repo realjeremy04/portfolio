@@ -1,24 +1,18 @@
 import { timeline } from '../../data/experience'
 import { ScrollReveal } from '../ScrollReveal'
+import { SectionHeading } from '../SectionHeading'
 
 
 
 export function ExperienceTimeline() {
   return (
-    <section className="snap-start bg-[var(--bg)] px-5 text-[#e6e6e6] sm:px-8 lg:px-10">
-      <div className="mx-auto grid min-h-[100svh] w-full max-w-[96rem] items-start justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:gap-9 lg:py-24 xl:max-w-[112rem] xl:gap-10 2xl:max-w-[112rem] 2xl:gap-12">
-        <div className="w-full max-w-screen xl:max-w-[112rem] 2xl:max-w-[112rem]">
-          <div className="flex items-center gap-4 sm:gap-6">
-            <span className="h-px w-20 bg-[#00ff66]/35 sm:w-28" />
-            <span className="h-px w-14 bg-[#00ff66]/55 sm:w-20" />
-          </div>
-
-          <h3 className="mt-5 text-[clamp(2rem,4vw,3rem)] font-black leading-[0.92] tracking-[-0.05em] text-[#f2f2f2]">
-            PROFESSIONAL EXPERIENCE
-          </h3>
+    <section className="grid snap-start justify-items-center bg-[var(--bg)] px-5 text-[#e6e6e6] sm:px-8 lg:px-10">
+      <div className="grid min-h-[100svh] w-full max-w-[92rem] items-start justify-items-center gap-8 py-16 sm:gap-10 sm:py-20 lg:gap-9 lg:py-24 xl:gap-10 2xl:gap-12">
+        <div className="w-full max-w-[92rem]">
+          <SectionHeading title="Professional Experience" eyebrow="CAREER" animateItems compact framedTitle className="text-left" />
         </div>
 
-        <div className="relative mt-2 w-full max-w-[96rem] xl:max-w-[112rem] 2xl:max-w-[112rem]">
+        <div className="relative mt-2 w-full max-w-[92rem]">
           {/* center vertical line */}
           <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/8" />
 
