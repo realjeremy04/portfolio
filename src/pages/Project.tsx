@@ -1,5 +1,6 @@
 import { CommitGraphSection } from '../components/projects/CommitGraphSection'
 import { FeaturedProjectsSection } from '../components/projects/FeaturedProjectsSection'
+import GithubStatsSection from '../components/projects/GithubStatsSection'
 import { ProjectHeroSection } from '../components/projects/ProjectHeroSection'
 
 function Project() {
@@ -8,6 +9,7 @@ function Project() {
 			<ProjectHeroSection />
 			<FeaturedProjectsSection />
 			<CommitGraphSection />
+			<GithubStatsSection />
 		</main>
 	)
 }

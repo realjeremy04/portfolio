@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { ScrollReveal } from '../ScrollReveal'
-import { heroSectionImage} from '../../data/homeContent'
+import { heroSectionImage } from '../../data/homeContent'
 import type { HomeSectionProps } from '../../types/home.types'
 
 const HomeHeroSection = memo(function HomeHeroSection({ sectionRef }: HomeSectionProps) {
@@ -20,12 +20,13 @@ const HomeHeroSection = memo(function HomeHeroSection({ sectionRef }: HomeSectio
               data-reveal-item
               className="display-font mx-auto max-w-[10ch] text-[clamp(2.7rem,9vw,5.1rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#f2f2f2] lg:mx-0 lg:max-w-[8.2ch] lg:text-[clamp(2.95rem,4.8vw,4.9rem)] xl:max-w-[9ch] xl:text-[clamp(3.1rem,5vw,6.6rem)]"
             >
-              Frontend
-              <span className="block text-[#00ff66]">Developer</span>
+              Software
+              <span className="block text-[#00ff66]">Engineer</span>
             </h1>
             <p data-reveal-item className="mx-auto max-w-xl text-[12px] leading-6 text-[#b5b5b5] sm:text-[13px] sm:leading-6.5 lg:mx-0 lg:max-w-[29rem] lg:text-[13.5px] lg:leading-6.5 xl:max-w-[35rem] xl:text-[14px] xl:leading-7">
-              Hi! I&apos;m Tuan Kiet &#x28;a.k.a. Jeremy&#x29;, a Front-End Developer passionate about building responsive and user-friendly web applications using React, TypeScript, and modern UI technologies.
-              I enjoy creating clean, scalable interfaces and turning ideas into smooth digital experiences.
+              <p>
+                Hi! I'm Tuan Kiet (a.k.a. Jeremy), a Software Engineer focused on building reliable, maintainable, and user-friendly digital solutions. I enjoy solving real-world problems, improving user experiences, and turning ideas into practical products.
+              </p>
             </p>
           </div>
 
