@@ -29,7 +29,7 @@ export const projectShowcase: ProjectShowcaseItem[] = [
     title: 'EduCare',
     summary:
       'A healthcare platform developed for primary schools.',
-    stack: ['React', 'MUI', 'JavaScript'],
+    stack: ['React.js', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Material UI'],
     stars: '214',
     source: {
       label: 'Source',
